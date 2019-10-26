@@ -1,0 +1,65 @@
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <h1 class="h3 mb-2 text-gray-800">Categories</h1>
+  <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information
+    about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables
+      documentation</a>.</p>
+ 
+
+      <div class="card shadow mb-4">
+          <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Add new Category</h6>
+            </div>
+        <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="md-form">
+                <input type="text"  #name class="form-control"
+                mdbInput>
+              <label for="materialRegisterFormFirstName">CategoryName</label>
+              </div>
+            </div>
+            <div class="col-12 col-md-auto">
+                <div class="md-form">
+                <input type="number" #id  class="form-control"
+                mdbInput>
+              <label for="materialRegisterFormLastName">ID</label>
+              </div>
+            </div>
+            <div class="col col-lg-2">
+                <div class="md-form">
+                <button mdbBtn type="button" color="success" (click)="add(name.value, id.value)" outline="true" mdbWavesEffect>Add</button>
+                </div>
+            </div>
+          </div>
+          </div>
+          </div>
+
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>CategoryID</th>
+              <th>CategoryName</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          
+            <tr *ngFor ="let cat of category">
+              <th>{{cat.id}}</th>
+              <th>{{cat.name}}</th>
+              <th> <button mdbBtn type="button" color="danger" (click) = "deleteCategory(cat._id)" outline="true" mdbWavesEffect>Delete</button>  </th>
+            </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

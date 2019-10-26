@@ -1,0 +1,58 @@
+{
+    "uz": {
+        "button": {
+            "name1": "⏮Asosiy menu",
+            "name2": "🔍 Qidiruv",
+            "name3": "💼 Sotib olish",
+            "name4": "🛒 Savat",
+            "name5": "✔️ Tanlash",
+            "name6": "Telefon raqamni jo'natish",
+            "name7": "❌ ❌ ❌ Savatni tozalash",
+            "name8": "✔️ Buyurtma berish",
+            "name9": "🌐 Ma'lumot",
+            "name10": "⚙️ Tilni o'zgartirish"
+        },
+        "text": {
+            "name1": "Soni",
+            "name2": "Savat bo'sh",
+            "name3": "🚫Iltimos /start commandasini bosing",
+            "name4": "Savatga qo'shildi",
+            "name5": "Uy manzilingizni yozib jonating. Uy va xonadon raqamlarini belgilang.",
+            "name6": "✅Tranzaksiya muvaffaqiyatli amalga oshirildi !",
+            "name7": "Tez orada siz bilan moderator bog'lanadi. Iltimos kuting ⚠️",
+            "name8": "Eslab qoldim!",
+            "name9": "Tranzaksiya amalga oshirilishiga rozilik bildiring",
+            "name10": "❌ Bunday dori bizda mavjud emas",
+            "name11": "⛔️Bu dori bizda qolmadi",
+            "name12": "Tugadi"
+        }
+    },
+    "ru": {
+        "button": {
+            "name1": "⏮Главное меню",
+            "name2": "🔍 поиск",
+            "name3": "💼 покупка",
+            "name4": "🛒 корзина",
+            "name5": "✔️ Выбор",
+            "name6": "Отправить номер телефона",
+            "name7": "❌ ❌ ❌ Очистить корзину",
+            "name8": "✔️ заказать",
+            "name9": "🌐 информация",
+            "name10": "⚙️ Изменить язык"
+        },
+        "text": {
+            "name1": "Число",
+            "name2": "Корзина пуста",
+            "name3": "🚫Пожалуйста, нажмите /start команду",
+            "name4": "Добавлено в корзина",
+            "name5": "Напишите свой домашний адрес и создайте его. Укажите номера домов и квартир.",
+            "name6": "✅Транзакция прошла успешно !",
+            "name7": "Модератор свяжется с вами в ближайшее время. Пожалуйста подождите ⚠️",
+            "name8": "Я помню!",
+            "name9": "Пожалуйста, согласитесь с соглашением",
+            "name10": "❌ У нас нет такого препарата",
+            "name11": "⛔️У нас не было этого препарата",
+            "name12": "Закончено"
+        }
+    }
+}

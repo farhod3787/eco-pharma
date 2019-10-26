@@ -1,0 +1,184 @@
+<section class="drug-list">
+
+    <div class="drug-list-catalog">
+        <!-- <div class="container p-0">
+            <a href="#">Suyak-muskul tizimi</a>
+            <a href="#">Suyak-muskul tizimi</a>
+
+        </div> -->
+    </div>
+    <div class="container p-0">
+        <div class="row">
+            <div class="col-sm-6" *ngFor = "let pharm of pharms">
+                <div class="drug-about">
+                    <div class="row">	
+                        <div class="col-12 text-center">
+                            <div class="drug-about-img"><img src="/images/{{pharm.logo}}" alt="" class="img-fluid"></div>
+                        </div>
+                        <div class="col-12 text-center">
+                            <h3 class="font-weight-bold">{{pharm.name}}</h3>
+                            <div class="row no-gutters pt-2">	
+                                <div class="col-6 "><span >Ishlab chiqaruvchi:</span></div>
+                                <div class="col-6"><span class="font-weight-bold">O'zbekiston</span></div>
+                            </div>
+                            <div class="row no-gutters">	
+                                <div class="col-6">	<span>Mavjudligi:</span></div>
+                                <div class="col-6"><span class="font-weight-bold">Mavjud</span></div>
+                            </div>
+                            <div class="row no-gutters">	
+                                <div class="col-6">	<span>Yetkazib berish:</span></div>
+                                <div class="col-6"><span class="font-weight-bold"> 1 soat ichida</span></div>
+                            </div>
+                            <hr>
+                        </div>
+                        <hr>	
+                    </div>
+                    <div class="drug-about-wrap">
+                        <div class="">
+                            <h5 class="font-weight-bold pb-2">Foydalanish uchun ko'rsatmalar
+                                      <button (click) = "uzb()" mdbBtn type="button" color="info" class="waves-light" mdbWavesEffect>Uzb</button>
+                  <button (click) = "rus()" mdbBtn type="button" color="info" class="waves-light" mdbWavesEffect>Рус</button>
+                  <button (click) = "eng()" mdbBtn type="button" color="info" class="waves-light" mdbWavesEffect>Узб</button>
+
+                            </h5>
+                            <p *ngIf = "uz" >{{pharm.sort[0]}} </p>
+                            <p *ngIf = "ru" >{{pharm.sort[1]}} </p>
+                            <p *ngIf = "en">{{pharm.sort[2]}} </p>
+                             
+                            <hr>	
+                        </div>
+                        <div class="">
+                            <h5 class="font-weight-bold pb-2">Farmakologik ta'sir</h5>
+                            <p>{{pharm.inform}}</p>
+                            
+                            <hr>	
+                        </div>
+                        <div class="">
+                            <h5 class="font-weight-bold pb-2">Farmakokinetikasi</h5>
+                            <p>Adsorbsiya va tarqatish.</p>
+                            <p>Natriyni og'iz orqali topshirgandan so'ng, pikozulfat katta assimilyatsiya qilmasdan katta ichakka etadi.</p>
+                            <p>	Biotransformatsiya.</p>
+                            <p>	Bis- (p-gidroksifenil) -piridil-2-metan (BGPM) ning faol metaboliti yo'g'on ichakdagi bakterial parchalanish natijasida hosil bo'ladi.</p>
+                            <p>Yo'q qilish</p>
+                            <p>Transformatsiyadan so'ng, faqat kichik hajmdagi HBPM so'riladi. Og'iz orqali kiritilganidan so'ng, 10 mg natriy pikosulfat umumiy dozaning 10,4% 48 soatdan so'ng BGPM glyukuronid siydik bilan chiqariladi. Bundan tashqari, BGPM o't bilan glyukuronid shaklida namoyon bo'ladi.</p>
+                            <p>Farmakokinetika va farmakodinamikaning o'zaro bog'liqligi.</p>
+                            <p>Picolaksning ta'siri odatda faol metabolit (BHPM) ning chiqarilishiga qarab preparatni qabul qilganidan 6-12 soat o'tgach sodir bo'ladi. Preparatning ichak tutilishi qon plazmasidagi faol metabolit darajasiga bog'liq emas.</p>		
+                            <hr>	
+                        </div>
+                        <div class="">
+                            <h5 class="font-weight-bold pb-2">Doza</h5>
+                            <p >
+
+                                Preparat ishlab chiqaruvchining dispenseriga yuboriladi. Kattalar va 10 yoshdan oshgan bolalar 13-27 tomchi (5-10 mg); 4 yoshdan 10 yoshgacha bo'lgan bolalar 7-13 tomchi (2,5-5 mg). 4 yoshgacha bo'lgan bolalarga 250 mg / kg tana vaznini yoki 3 kg tana vazniga 2 tomchi miqdorini tavsiya etish tavsiya etiladi. Bolalar uchun preparatni oziq-ovqatga qo'shib qo'yish mumkin. Bolalar kuniga bir marta samarali bo'lishi mumkin. Agar kerak bo'lsa, bolada davolanish muddati uzaytirilishi mumkin, ammo uni uch kunga cheklash afzaldir.
+
+                                Pelikullarni kechqurun olish kerak, shunda kreslo ertalab edi.
+
+                                Katta miqdorda opioidlarni qabul qiluvchi saraton kasalliklarida ich qotib qolishdan saqlanish uchun shifokor retsepti bo'yicha foydalaniladi.
+                            </p>
+                            <hr>	
+                        </div>
+                        <div class="">
+                            <h5 class="font-weight-bold pb-2">Qo'llash mumkin bo'lmagan holatlar</h5>
+                            <p >
+
+                                Ichak tutilishi; o'tkir yallig'lanishli ichak kasalliklari va qorin organlarining o'tkir kasalliklari (o'tkir appenditsit, ülseratif kolit, peritonit kabi); o'tkir qorin og'rig'i, yuqorida ko'rsatilgan o'tkir yallig'lanish kasalliklarini ko'rsatishi mumkin bo'lgan ko'ngil aynish va gijjalar bilan birga; og'ir suvsizlanish; Natriy pikosulfat va preparatning boshqa tarkibiy qismlariga yuqori sezuvchanlik.
+                            </p>
+                            <hr>	
+                        </div>
+                        <div class="">
+                            <h5 class="font-weight-bold pb-2">Dozani oshirib yuborish</h5>
+                            <p >
+                                Alomatlar Yuqori dozalarda Picolaks suyuqlikning ichak harakatlarini, qorin bo'shlig'ining kramplarini (suyuqlik) va suv va elektrolitlar muvozanatining (gipokalemiya, boshqa elektrolitlar va suyuqliklarni yo'qotish), katta ichak shilliq qavatining ishemiyasini klinik jihatdan sezilarli darajada buzishi mumkin. Uzoq muddatli haddan tashqari doz, hipokalemiya natijasida surunkali diareya va qorin og'rig'i, hipokalemiya, ikkinchi darajali hiperaldosteronizm, buyrak shikastlanishi va nefrolitiyazaning rivojlanishi, metabolik alkaloz, gipokalemiya va mushaklarning kuchsizlanishiga olib keladi.
+
+                                Davolash. Gastrik lavaj, enterosorbentsni iste'mol qilish (faollashtirilgan uglerod), simptomatik davolash (suv va elektrolit muvozanatini tuzatish, antispazmodikani qo'llash).
+                            </p>	
+                        </div>
+                    </div>
+                </div>
+            </div>					
+
+            <!-- <div class="col-sm-6">
+                <div class="drug-about">
+                    <div class="row">	
+                        <div class="col-12 text-center">
+                            <div class="drug-about-img"><img src="assets/website/img/reklama-1.png" alt="" class="img-fluid"></div>
+                        </div>
+                        <div class="col-12 text-center">
+                            <h3 class="font-weight-bold">ПИКОЛАКС КАПЛИ 0,75% 15МЛ</h3>
+                            <div class="row no-gutters pt-2">	
+                                <div class="col-6 "><span >Ishlab chiqaruvchi:</span></div>
+                                <div class="col-6"><span class="font-weight-bold">O'zbekiston</span></div>
+                            </div>
+                            <div class="row no-gutters">	
+                                <div class="col-6">	<span>Mavjudligi:</span></div>
+                                <div class="col-6"><span class="font-weight-bold">Mavjud</span></div>
+                            </div>
+                            <div class="row no-gutters">	
+                                <div class="col-6">	<span>Yetkazib berish:</span></div>
+                                <div class="col-6"><span class="font-weight-bold"> 1 soat ichida</span></div>
+                            </div>
+                            <hr>
+                        </div>
+                        <hr>	
+                    </div>
+                    <div class="drug-about-wrap">
+                        <div class="">
+                            <h5 class="font-weight-bold pb-2">Foydalanish uchun ko'rsatmalar</h5>
+                            <p> Qorish yoki ichak harakatining oldini olishni talab qiluvchi holatlar.</p>
+                            <hr>	
+                        </div>
+                        <div class="">
+                            <h5 class="font-weight-bold pb-2">Farmakologik ta'sir</h5>
+                            <p>	
+                            Picolaksning faol moddasi bo'lgan natriy pikosulfat triarilmetan guruhining lokal ta'siri bilan ajralib turuvchi agentdir. Katta ichakdagi bakterial parchalanishdan so'ng natriy pikosulfat o'zining shilliq qavatini rag'batlantiradi, peristaltikni tezlashtiradi va ichakning lümeni ichidagi suv va elektrolitlar to'planishiga yordam beradi. Buning natijasida ichak harakatini rag'batlantirish, tranzit vaqtini kamaytirish va najasni yumshatish.</p>
+                            <hr>	
+                        </div>
+                        <div class="">
+                            <h5 class="font-weight-bold pb-2">Farmakokinetikasi</h5>
+                            <p>Adsorbsiya va tarqatish.</p>
+                            <p>Natriyni og'iz orqali topshirgandan so'ng, pikozulfat katta assimilyatsiya qilmasdan katta ichakka etadi.</p>
+                            <p>	Biotransformatsiya.</p>
+                            <p>	Bis- (p-gidroksifenil) -piridil-2-metan (BGPM) ning faol metaboliti yo'g'on ichakdagi bakterial parchalanish natijasida hosil bo'ladi.</p>
+                            <p>Yo'q qilish</p>
+                            <p>Transformatsiyadan so'ng, faqat kichik hajmdagi HBPM so'riladi. Og'iz orqali kiritilganidan so'ng, 10 mg natriy pikosulfat umumiy dozaning 10,4% 48 soatdan so'ng BGPM glyukuronid siydik bilan chiqariladi. Bundan tashqari, BGPM o't bilan glyukuronid shaklida namoyon bo'ladi.</p>
+                            <p>Farmakokinetika va farmakodinamikaning o'zaro bog'liqligi.</p>
+                            <p>Picolaksning ta'siri odatda faol metabolit (BHPM) ning chiqarilishiga qarab preparatni qabul qilganidan 6-12 soat o'tgach sodir bo'ladi. Preparatning ichak tutilishi qon plazmasidagi faol metabolit darajasiga bog'liq emas.</p>		
+                            <hr>	
+                        </div>
+                        <div class="">
+                            <h5 class="font-weight-bold pb-2">Doza</h5>
+                            <p >
+
+                                Preparat ishlab chiqaruvchining dispenseriga yuboriladi. Kattalar va 10 yoshdan oshgan bolalar 13-27 tomchi (5-10 mg); 4 yoshdan 10 yoshgacha bo'lgan bolalar 7-13 tomchi (2,5-5 mg). 4 yoshgacha bo'lgan bolalarga 250 mg / kg tana vaznini yoki 3 kg tana vazniga 2 tomchi miqdorini tavsiya etish tavsiya etiladi. Bolalar uchun preparatni oziq-ovqatga qo'shib qo'yish mumkin. Bolalar kuniga bir marta samarali bo'lishi mumkin. Agar kerak bo'lsa, bolada davolanish muddati uzaytirilishi mumkin, ammo uni uch kunga cheklash afzaldir.
+
+                                Pelikullarni kechqurun olish kerak, shunda kreslo ertalab edi.
+
+                                Katta miqdorda opioidlarni qabul qiluvchi saraton kasalliklarida ich qotib qolishdan saqlanish uchun shifokor retsepti bo'yicha foydalaniladi.
+                            </p>
+                            <hr>	
+                        </div>
+                        <div class="">
+                            <h5 class="font-weight-bold pb-2">Qo'llash mumkin bo'lmagan holatlar</h5>
+                            <p >
+
+                                Ichak tutilishi; o'tkir yallig'lanishli ichak kasalliklari va qorin organlarining o'tkir kasalliklari (o'tkir appenditsit, ülseratif kolit, peritonit kabi); o'tkir qorin og'rig'i, yuqorida ko'rsatilgan o'tkir yallig'lanish kasalliklarini ko'rsatishi mumkin bo'lgan ko'ngil aynish va gijjalar bilan birga; og'ir suvsizlanish; Natriy pikosulfat va preparatning boshqa tarkibiy qismlariga yuqori sezuvchanlik.
+                            </p>
+                            <hr>	
+                        </div>
+                        <div class="">
+                            <h5 class="font-weight-bold pb-2">Dozani oshirib yuborish</h5>
+                            <p >
+                                Alomatlar Yuqori dozalarda Picolaks suyuqlikning ichak harakatlarini, qorin bo'shlig'ining kramplarini (suyuqlik) va suv va elektrolitlar muvozanatining (gipokalemiya, boshqa elektrolitlar va suyuqliklarni yo'qotish), katta ichak shilliq qavatining ishemiyasini klinik jihatdan sezilarli darajada buzishi mumkin. Uzoq muddatli haddan tashqari doz, hipokalemiya natijasida surunkali diareya va qorin og'rig'i, hipokalemiya, ikkinchi darajali hiperaldosteronizm, buyrak shikastlanishi va nefrolitiyazaning rivojlanishi, metabolik alkaloz, gipokalemiya va mushaklarning kuchsizlanishiga olib keladi.
+
+                                Davolash. Gastrik lavaj, enterosorbentsni iste'mol qilish (faollashtirilgan uglerod), simptomatik davolash (suv va elektrolit muvozanatini tuzatish, antispazmodikani qo'llash).
+                            </p>	
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+
+        </div>
+    </div>
+ 
+</section>

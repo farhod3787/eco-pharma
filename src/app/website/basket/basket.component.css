@@ -1,0 +1,10 @@
+.card-product-about{
+    box-shadow: 0 0 30px rgba(0,0,0,.08);
+    font-size: 18px;
+    margin-top: 15px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .card-product-border{
+    border-bottom: 1px solid #EFECEC;
+  }

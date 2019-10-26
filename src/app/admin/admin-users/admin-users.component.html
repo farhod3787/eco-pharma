@@ -1,0 +1,97 @@
+<div class="container-fluid" >
+
+  <!-- Page Heading -->
+  <h1 class="h3 mb-2 text-gray-800">All Users</h1>
+  <p class="mb-4">DataTables is a third party plugin that is used to generate
+    the demo table below. For more information about DataTables, please visit the official
+    DataTables documentation.</p>
+ 
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">All Users</h6>
+    </div>
+    <div class="card-body">
+
+
+      <!-- <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Tel Number</th>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr *ngFor="let user of users">
+              <th>{{user.number}}</th>
+              <th>{{user.name}}</th>
+              <th>{{user.address}}</th>
+
+              <th> <button mdbBtn type="button" color="danger" rounded="true" (click)="delete(user._id)"
+                  mdbWavesEffect>Delete</button></th>
+          </tfoot>
+        </table>
+
+      </div> -->
+
+
+      <div style="width: 100%">
+  
+          <mat-form-field style="widows: 40%; text-align: center">
+              <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Qidirish...">
+            </mat-form-field>
+            
+            <div class="mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort style="width: 100%">
+            
+                <!-- ID Column -->
+                <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>ID</b> </th>
+                  <td mat-cell *matCellDef="let row, let i=index">{{i+1}}</td>
+                </ng-container>
+            
+                <!-- Progress Column -->
+                <ng-container matColumnDef="number">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Tel. Number : </b> </th>
+                  <td mat-cell *matCellDef="let row"> {{row.number}} </td>
+                </ng-container>
+            
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> <b> Name : </b></th>
+                  <td mat-cell *matCellDef="let row">{{row.name}}   </td>
+                </ng-container>
+            
+                <!-- Color Column -->
+                <ng-container matColumnDef="address">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> <b> Address : </b></th>
+                  <td mat-cell *matCellDef="let row"  > {{row.address}} </td>
+                </ng-container>
+                <!-- "./node_modules/chart.js/dist/Chart.js", -->
+
+                    <ng-container matColumnDef="delete">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> <b> O'chirish :</b> </th>
+                        <td mat-cell *matCellDef="let row"  >
+                            <button (click)="delete(row._id)" ><mdb-icon size="2x" class="red-text pr-3" fas icon="trash"></mdb-icon></button>
+                        </td>
+                      </ng-container>
+            
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+                </tr>
+              </table>
+            
+              <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+            </div>
+        </div>
+        
+
+
+    </div>
+  </div>
+
+</div>

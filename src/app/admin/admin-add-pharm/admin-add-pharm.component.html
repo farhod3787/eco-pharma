@@ -1,0 +1,121 @@
+<div class="container-fluid">
+
+  <mdb-card>
+
+    <mdb-card-header class="info-color white-text text-center py-4">
+      <h5>
+        <strong>Add new Pharm</strong>
+      </h5>
+    </mdb-card-header>
+
+    <!--Card content-->
+    <mdb-card-body class="px-lg-5 pt-0">
+
+
+      <form [formGroup]="form" (submit)="onSave()">
+        <div class="form-row">
+          <div class="col">
+            <div class="md-form">
+              <input type="text" id="materialRegisterFormFirstName" formControlName="name" class="form-control"
+                mdbInput>
+              <label for="materialRegisterFormFirstName">First name</label>
+            </div>
+          </div>
+
+          <div class="col">
+            <!-- Last name -->
+            <div class="md-form">
+              <input type="number" formControlName="price" id="materialRegisterFormLastName" class="form-control"
+                mdbInput>
+              <label for="materialRegisterFormLastName">Price</label>
+            </div>
+          </div>
+
+          <div class="col">
+              <!-- Last name -->
+              <div class="md-form">
+                <input type="number" formControlName="rate" id="materialRegisterFormRate" class="form-control"
+                  mdbInput>
+                <label for="materialRegisterFormLastName">Rate </label>
+              </div>
+            </div>
+
+
+
+
+        </div>
+
+
+        <div>
+            <button mdbBtn gradient="blue" rounded="true" type="button" (click)="filePicker.click()">Pick Image</button>
+            <input type="file" #filePicker name="image" (change)="onInputChange($event)">
+          </div>
+          <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && form.get('image').valid">
+            <img width="300px" [src]="imagePreview" [alt]="form.value.title">
+          </div>
+
+        <!--                              aaaaaaaaaaaaaaaaaaaaaaaaaa  -->
+        <div class="md-form">
+          <input type="text" formControlName="sort" id="materialRegisterFormLastName" class="form-control" mdbInput>
+          <label for="materialRegisterFormLastName">O'zbekcha ma'lumot</label>
+        </div>
+        <div class="md-form">
+          <input type="text" formControlName="sort1" id="materialRegisterFormLastName" class="form-control" mdbInput>
+          <label for="materialRegisterFormLastName">Русская информатция</label>
+        </div>
+        <div class="md-form">
+          <input type="text" formControlName="sort2" id="materialRegisterFormLastName" class="form-control" mdbInput>
+          <label for="materialRegisterFormLastName">Узбекча малумот</label>
+        </div>
+        <div class="form-row">
+            <div class="col">
+        <div class="md-form">         
+                     <select (ngModel)="roomy" formControlName="roomy"  placeholder="Enter Category" class="browser-default custom-select" name="category" id="category">
+                       <option value="{{cat.name}}"  *ngFor = "let cat of categorys" >{{cat.name}}</option>
+                     </select>
+          <!-- <input type="text" formControlName="roomy" id="materialRegisterFormLastName" class="form-control" mdbInput>
+          <label for="materialRegisterFormLastName">Roomy</label> -->
+        </div>
+        </div>
+        <div class="col">
+          
+            <div class="md-form">
+                <input type="number" formControlName="sale" id="materialRegisterFormLastName" class="form-control" mdbInput>
+                <label for="materialRegisterFormLastName">Sale</label>
+              </div>
+        </div>
+
+        </div>
+ 
+        <!-- <input  class="form-control" type="text" formControlName="name" placeholder="Post Title"  mdbInput> -->
+
+        <div class="md-form">
+          <textarea type="text" formControlName="inform" id="materialContactFormMessage" class="form-control md-textarea" mdbInput></textarea>
+          <label for="materialContactFormMessage">Kommentariya</label>
+        </div>
+
+        <!-- <textarea rows="4"  formControlName="price" placeholder="Post Content"></textarea> -->
+
+        <button mdbBtn gradient="success" type="submit">Save Pharm</button>
+        <a routerLink="/admin/pharms">All Pharms</a>
+      </form>
+
+      <!-- Material form register -->
+
+
+
+
+
+
+
+
+
+
+    </mdb-card-body>
+
+  </mdb-card>
+  <!-- Material form register -->
+
+
+
+</div>

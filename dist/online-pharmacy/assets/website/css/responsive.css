@@ -1,0 +1,260 @@
+@media only screen and (max-width: 1200px) {
+	.shop-left-icons{
+		display: none;
+	}
+	.shopping-menu-teme{
+		padding: 0;
+		font-size: 17px;
+	}
+	.shopping-button-all{
+		font-size: 15px;
+	}
+	.wrap{
+		width:50%;
+	}
+	.search{
+		padding-left: 	10px;
+	}
+	.shop-card-icon{
+		width: 110px;
+		border-right:1px solid #EFECEC;
+		text-align: center;
+		display: inline-block;
+		color:#888888;
+		margin: 0;
+		cursor: pointer;
+		position: relative;
+		font-size: 14px;
+	}
+	.shop-card-icon span{
+		font-size: 30px;
+
+	}
+	.col-product {
+		width:25%;
+	}
+
+}
+@media only screen and (max-width: 992px){
+	.wrap-best-offer{
+		padding: 0 20px;
+	}
+	.shop-card-icon{
+		padding: 10px 0;
+	}
+	.shop-card-icon-border{
+		display: none;
+	}
+	.container-a{
+		width: 100%;
+		margin: 0 auto;
+	}
+	.wrap-delivery{
+		display: none;
+	}
+	.wrapper-head{
+		display: none;
+	}
+	.wrap-shopping-menu,.wrap-shoping-advertising{
+		display: none;
+	}
+	.header-logo-tem{
+		background-color: #04B847;
+		padding:10px 30px 10px 10px;
+	}
+
+	.wrap-shopping-body{
+		padding-top: 0;
+	}
+	.padding-all{
+		padding-top: 55px;
+	}
+	.shoping-text{
+		display: none;
+	}
+	.wrap{
+		width:70%;
+		padding-left: 0px;
+	}
+	.logo .bars-icons{
+		color: #fff;
+		font-size: 25px;
+		padding: 0  10px 0 0;
+	}
+	.logo .h2{
+		display: none;
+	}
+	.searchTerm {
+		padding: 5px 5px 5px 20px;
+		height: 35px;
+		width: 100%;
+		background-color: #fff;
+	}
+	.searchButton {
+		width: 50px;
+		height: 35px;
+	}
+	.shop-card-icon{
+		width: 50px;
+		border:0;
+	}
+
+	.search{
+		width: 100%;
+		padding-left: 10px;
+	}
+	.wrap-shopping {
+		padding: 0;
+	}
+	.wrap-shopping span{
+		font-size: 20px;
+		color: #fff;
+	}
+	.wrap-shopping  sup{
+		font-size: 11px;
+	}
+	.carzinka-icons-text{
+		display: none;
+	}
+	.users-icon{
+		display: none;
+
+	}
+	.logo{
+		padding: 0;	
+	}
+	.logo img{
+		display: none;
+	}
+	.button-bars-icon{
+		display: block;
+		background-color: #04B847;
+		color: #fff;
+	}
+	.wrap-shopping-menu-teme{
+		display: none;
+	}
+	.con-header-text{
+		display: none;
+	}
+	.col-product {
+		width: 33%;
+	}
+	footer{
+		padding: 20px;
+	}
+
+	.shoppingcard-product h4{
+		font-size: 18px;
+	}
+}
+
+
+@media only screen and (max-width: 768px){
+	.header-container{
+		padding: 0 10px;
+	}
+	.catalog-teme{
+		margin: 10px 0;
+	}
+	.col-product {
+		width: 33%;
+	}
+	.footer-about-image{
+		display: none;
+	}
+	.drug-list-catalog a{
+		border-radius: 20px;
+		padding:5px 10px;
+	}
+	.drug-list-catalog a{
+		padding-right: 10px;
+		margin: 8px 0;
+	}
+	.col-product {
+		width: 50%;
+		padding: 10px;
+	}
+	.drug-product{
+		width: 100%;
+		margin: 0;
+	}
+	.search{
+		width: 100%;
+	}
+}
+@media only screen and (max-width:576px){
+
+	.col-sm-6{
+		width:45%;
+		padding: 10px;
+		box-sizing: border-box;	
+		margin: 0 auto;
+	}
+	.col-product {
+		width: 50%;
+		padding: 10px;
+	}
+	.drug-product{
+		width: 100%;
+		margin: 0;
+	}
+	.float-right-sm{
+		margin-right: 0;
+	}
+	.float-left-sm{
+		margin-left: 0;
+	}
+
+	footer{
+		padding: 0 20px;
+	}
+	.shoppingcard-product{
+		font-size: 14px;
+	}
+	.shoppingcard-product h4{
+		font-size: 16px;
+	}
+	.shoppingcard-product span{
+		font-size: 18px ;
+		letter-spacing: 1px;
+	}
+	/*:::::::::::::::::::::::::::::::::::::::::;*/
+	.drug-list{
+		padding: 0 20px;
+	}
+	.profil{
+		padding: 0 20px;
+	}
+	.aboute-eco-pharma{
+		padding: 20px;
+	}
+	.shop-comparison{
+		display: none;
+	}
+	.searchButton{
+		font-size: 15px;
+	}
+}
+
+@media only screen and (max-width: 510px){
+	.col-sm-6{
+		width: 100%;
+	}
+	.wrap-best-offer{
+		padding: 20px;
+	}
+	.col-product {
+		width: 100%;
+	}
+	.drug-product{
+		width: 100%;
+		margin: 0;
+	}
+
+}
+
+
+@media only screen and (max-width: 360px){
+	
+}

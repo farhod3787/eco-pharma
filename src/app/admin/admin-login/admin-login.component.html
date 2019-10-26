@@ -1,0 +1,46 @@
+  
+  <div class="container">
+    
+      <div class="row">
+        <div class="col-sm">
+          
+        </div>
+        <div class="col-sm">
+            <mdb-card>
+
+                <mdb-card-header class="info-color white-text text-center py-4">
+                  <h5>
+                    <strong> 
+                      <mdb-icon fas icon="user-tie"></mdb-icon> 
+                      
+                      Admin</strong>
+                  </h5>
+                </mdb-card-header>
+                <mdb-card-body class="px-lg-5 pt-0">
+                  <form class="text-center" style="color: #757575;">
+                    <div class="md-form">
+                      <input type="text" #login class="form-control" mdbInput>
+                      <label for="materialLoginFormEmail"><mdb-icon fas icon="door-open"></mdb-icon> Login</label>
+                    </div>
+                    <div class="md-form">
+                      <input type="password" #password  class="form-control" mdbInput>
+                      <label for="materialLoginFormPassword"><mdb-icon fas icon="key"></mdb-icon> Password</label>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                      <div>
+                        <mdb-checkbox>Remember me</mdb-checkbox>
+                      </div>
+                    </div>
+              
+                    <button  (click)="signIn(login.value, password.value)" mdbBtn color="info" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0" mdbWavesEffect
+                      >Sign in</button>
+                    
+                  </form>
+                </mdb-card-body>
+              </mdb-card>
+        </div>
+        <div class="col-sm">
+          
+        </div>
+      </div>
+    </div>

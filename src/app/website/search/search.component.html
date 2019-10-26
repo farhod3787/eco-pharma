@@ -1,0 +1,105 @@
+<section class="drug-list">
+
+   
+    <div class="container p-0">
+      <div class="row" *ngFor="let pharm of pharm">
+         
+        <div class="col-lg-12">
+          <div class="drug-about">
+            <div class="row">	
+              <div class="col-md-5">
+                <div class="drug-about-img">
+                  <img src="https://secret-lake-41655.herokuapp.com/images/{{pharm.logo}}"   class="img-fluid">
+                </div>
+              </div>
+              <div class="col-md-7">
+                <h3 class="font-weight-bold">{{pharm.name}}</h3>
+                <div class="row no-gutters pt-2">	
+                  <div class="col-4 "><span >Ishlab chiqaruvchi:</span></div>
+                  <div class="col-4"><span class="font-weight-bold">O'zbekiston</span></div>
+                </div>
+                <div class="row no-gutters">	
+                  <div class="col-4">	<span>Mavjudligi:</span></div>
+                  <div class="col-4"><span class="font-weight-bold">Mavjud</span></div>
+                </div>
+                <div class="row no-gutters">	
+                  <div class="col-4">	<span>Yetkazib berish:</span></div>
+                  <div class="col-4"><span class="font-weight-bold"> 1 soat ichida</span></div>
+                </div>
+                <hr>
+                <div class="drug-cost-about">
+                  <h3 class=" font-weight-bold d-inline-block">{{pharm.price*q}}</h3>
+                  <span>
+                    <button class="drug-about-butto-left" (click)= "min()" >-</button>
+                    <input type="text" placeholder="{{q}} ta">
+                    <button (click)="add()" class="drug-about-butto-right">+</button>
+                  </span>
+                </div>
+                <hr>	
+                <div class="drug-product-shopping">
+                  <div class="row no-gutters">
+                    <div class="col-12">
+                      <div class="drug-product-buy" style="background-color: #00A13C;color: #fff;">
+                        <button (click)="abasket(pharm._id )"> Sotib olish</button>
+                        <!-- <a routerLink="/basket" class="text-white"><span class="fa fa-shopping-cart"></span> Sotib olish</a> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>	
+            </div>
+            <div class="drug-about-wrap">
+              <div class="">
+                <h5 class="font-weight-bold pb-2">Foydalanish uchun ko'rsatmalar</h5>
+                <p> Qorish yoki ichak harakatining oldini olishni talab qiluvchi holatlar.</p>
+                <hr>	
+              </div>
+
+              <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                  <h5 class="font-weight-bold pb-2">Farmakologik ta'sir
+                  <button (click) = "uzb()" mdbBtn type="button" color="info" class="waves-light" mdbWavesEffect>Uzb</button>
+                  <button (click) = "rus()" mdbBtn type="button" color="info" class="waves-light" mdbWavesEffect>Рус</button>
+                  <button (click) = "eng()" mdbBtn type="button" color="info" class="waves-light" mdbWavesEffect>Узб</button>
+                  </h5>
+
+              </div>
+              <div>
+                <p *ngIf = "uz" >{{pharm.sort[0]}} </p>
+                <p *ngIf = "ru" >{{pharm.sort[1]}} </p>
+                <p *ngIf = "en">{{pharm.sort[2]}} </p>
+                <hr>	
+              </div>
+              <div class="">
+                <h5 class="font-weight-bold pb-2">Farmakokinetikasi</h5>
+                <p>{{pharm.inform}}</p>
+                <hr>	
+              </div>
+              <div class="">
+                <h5 class="font-weight-bold pb-2">Doza</h5>
+                <p >
+
+                  Preparat ishlab chiqaruvchining dispenseriga yuboriladi. Kattalar va 10 yoshdan oshgan bolalar 13-27 tomchi (5-10 mg); 4 yoshdan 10 yoshgacha bo'lgan bolalar 7-13 tomchi (2,5-5 mg). 4 yoshgacha bo'lgan bolalarga 250 mg / kg tana vaznini yoki 3 kg tana vazniga 2 tomchi miqdorini tavsiya etish tavsiya etiladi. Bolalar uchun preparatni oziq-ovqatga qo'shib qo'yish mumkin. Bolalar kuniga bir marta samarali bo'lishi mumkin. Agar kerak bo'lsa, bolada davolanish muddati uzaytirilishi mumkin, ammo uni uch kunga cheklash afzaldir.
+
+                  Pelikullarni kechqurun olish kerak, shunda kreslo ertalab edi.
+
+                  Katta miqdorda opioidlarni qabul qiluvchi saraton kasalliklarida ich qotib qolishdan saqlanish uchun shifokor retsepti bo'yicha foydalaniladi.
+                </p>
+                <hr>	
+              </div>
+              <div class="">
+                <h5 class="font-weight-bold pb-2">Qo'llash mumkin bo'lmagan holatlar</h5>
+                <p >
+                  
+                  Ichak tutilishi; o'tkir yallig'lanishli ichak kasalliklari va qorin organlarining o'tkir kasalliklari (o'tkir appenditsit, ülseratif kolit, peritonit kabi); o'tkir qorin og'rig'i, yuqorida ko'rsatilgan o'tkir yallig'lanish kasalliklarini ko'rsatishi mumkin bo'lgan ko'ngil aynish va gijjalar bilan birga; og'ir suvsizlanish; Natriy pikosulfat va preparatning boshqa tarkibiy qismlariga yuqori sezuvchanlik.
+                </p>
+                <hr>	
+              </div>
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+</section>

@@ -1,0 +1,54 @@
+  
+
+    <div class="profil-about">
+      <div class="h5 font-weight-bold py-2 text-uppercase" >Mening profilim</div>
+      <form>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <!-- <label for="validationServer01">Ismingiz</label> -->
+            <input type="text" #name class="form-control is-valid" id="validationServer01" placeholder="{{person[0].name}}"  required>
+            <div class="valid-feedback">
+              Majburiy!
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <!-- <label for="validationServer02">Familyangiz</label> -->
+            <input type="text" #lastname class="form-control is-valid" id="validationServer02" placeholder="{{person[0].lastname}}"  required>
+            <div class="valid-feedback">
+              Majburiy!
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <!-- <div class="col-md-12 mb-3">
+            <label for="validationServer02">Elektron pochta manzilingiz</label>
+            <input type="text" class="form-control is-valid" id="validationServer02" placeholder="sh.xoltorayev@gmail.com"  required>
+            <div class="valid-feedback">
+              Majburiy!
+            </div>
+          </div> -->
+          <div class="col-md-12 mb-3">
+            <label for="validationServer01">Telefon raqam</label>
+            <input type="text" class="form-control is-valid" id="validationServer01" placeholder="{{person[0].number}}"  disabled>
+            <div class="valid-feedback">
+              Majburiy!
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+            <label class="form-check-label" for="invalidCheck3">
+              Agree to terms and conditions
+            </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-success w-100" (click) = "update(name.value, lastname.value)"><span  style="font-size: 20px;">	Saqlash</span></button>
+      </form>
+    </div>
+ 
+
+ 

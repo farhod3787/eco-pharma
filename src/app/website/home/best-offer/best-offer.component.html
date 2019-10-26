@@ -1,0 +1,179 @@
+<section class="wrap-best-offer">
+    <div class="container-a p-0">
+        <div class="catalog-teme">
+            <div class="d-inline-block catalog-text"> {{'HOME.TITLE' | translate}}</div>
+
+            <button routerLink = "/pharms" class="shopping-button-all">{{'HOME.OLD' | translate}} <i class="fa fa-angle-right"></i></button>
+        </div>
+        <div class="row">
+
+            <div class="col-product " *ngFor="let pharm of pharms">
+                <div class="drug-product ">
+
+                    <div class="finished-icon" *ngIf="pharm.rate === 0">
+                        <!-- <div class="wrap-new-action"><span>AND</span></div>  -->
+                        <div class="finished-icon-text">{{'HOME.NOL' | translate}}</div>
+
+                    </div>
+
+                    <div routerLink="/about-pharm/{{pharm._id}}" class="drug-product-about">
+
+                        <div *ngIf="pharm.sale !==0" class="wrap-new-action-now">
+                            <span>{{pharm.sale}}%</span>
+                        </div>
+
+                        <div class="product-img">
+                            <img src="/images/{{pharm.logo}}" alt="" class="img-fluid">
+                        </div>
+
+                        <div class="drud-name pt-2 ">{{pharm.name}}</div>
+                        <div class="drug-text-about">GM Pharmaceuticals Ltd , Грузия</div>
+                        <div class="drug-product-cost"><span>{{pharm.price }} </span> {{'HOME.SONI' | translate }} </div>
+                    </div>
+
+
+                    <div class="drug-product-shopping">
+                        <div class="row no-gutters">
+                            <div class="col-9">
+                                <div class="drug-product-buy">
+                                    <button (click)="addBasket(pharm._id, pharm.name)"><span class="fa fa-shopping-cart"></span>{{'HOME.BUTTON' | translate}} </button>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="drug-product-buy">
+                                    <button (click) = "comparison(pharm._id)" > 
+                                      <mdb-icon fas icon="exchange-alt"></mdb-icon>
+                  </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="col-product ">
+          <div class="drug-product " >
+            <div class="drug-product-about">
+              <div class="product-img">
+                <img src="assets/website/img/Новая папка (2)/7.jpg" alt="" class="img-fluid" >
+              </div>
+              <div class="drud-name pt-2 ">АРУТИМОЛ таблетки  - 60шт.</div>
+              <div class="drug-text-about">GM Pharmaceuticals Ltd , Грузия</div>
+              <div class="drug-product-cost"><span>53 990 </span>so'm-1 dona</div>
+            </div>
+            <div class="drug-product-shopping">
+              <div class="row no-gutters">
+                <div class="col-9">
+                  <div class="drug-product-buy">
+                    <a href="#"><span class="fa fa-shopping-cart"></span> Savatga qo'shish</a>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="drug-product-buy product-buy-border">
+                    <a href="#"> 
+                        <mdb-icon fas icon="angle-double-right"></mdb-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>				
+        </div> -->
+
+            <!-- <div class=" col-product " >
+          <div class="drug-product ">
+            <div class="wrap-new-action"><span>new</span></div>
+            <div class="drug-product-about">
+              <div class="product-img">
+                <img src="assets/website/img/Новая папка (2)/4.jpg" alt="" class="img-fluid" >
+              </div>
+              <div class="drud-name pt-2 ">АРУТИМОЛ таблетки  - 60шт.</div>
+              <div class="drug-text-about">GM Pharmaceuticals Ltd , Грузия</div>
+              <div class="drug-product-cost"><span>53 990 </span>so'm-1 dona</div>
+            </div>
+            <div class="drug-product-shopping">
+              <div class="row no-gutters">
+                <div class="col-9">
+                  <div class="drug-product-buy">
+                    <a href="#"><span class="fa fa-shopping-cart"></span> Savatga qo'shish</a>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="drug-product-buy product-buy-border">
+                    <a href="#">
+                        <mdb-icon fas icon="angle-double-right"></mdb-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>				
+        </div> -->
+
+            <!-- <div class="col-product">
+          <div class="drug-product " >
+            <div class="drug-product-about">
+              <div class="product-img">
+                <img src="assets/website/img/Новая папка (2)/1.jpg" alt="" class="img-fluid" >
+              </div>
+              <div class="drud-name pt-2 ">АРУТИМОЛ таблетки - 60шт. </div>
+              <div class="drug-text-about">GM Pharmaceuticals Ltd , Грузия</div>
+              <div class="drug-product-cost"><span>53 990 </span>so'm-1 dona</div>
+            </div>
+            <div class="drug-product-shopping">
+              <div class="row no-gutters">
+                <div class="col-9">
+                  <div class="drug-product-buy">
+                    <a href="#"><span class="fa fa-shopping-cart"></span> Savatga qo'shish</a>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="drug-product-buy product-buy-border">
+                    <a href="#">
+                      <mdb-icon fas icon="angle-double-right"></mdb-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>				
+        </div>	 -->
+
+            <!-- <div class="col-product ">
+          <div class="drug-product " >
+            <div class="drug-product-about">
+              <div class="product-img">
+                <img src="assets/website/img/Новая папка (2)/1.jpg" alt="" class="img-fluid" >
+              </div>
+              <div class="drud-name pt-2 ">АРУТИМОЛ таблетки  - 60шт.</div>
+              <div class="drug-text-about">GM Pharmaceuticals Ltd , Грузия</div>
+              <div class="drug-product-cost"><span>53 990 </span>so'm-1 dona</div>
+            </div>
+            <div class="drug-product-shopping">
+              <div class="row no-gutters">
+                <div class="col-9">
+                  <div class="drug-product-buy">
+                    <a href="#"><span class="fa fa-shopping-cart"></span> Savatga qo'shish</a>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="drug-product-buy product-buy-border">
+                    <a href="#">
+                        <mdb-icon fas icon="angle-double-right"></mdb-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>				
+        </div> -->
+
+
+
+
+
+
+        </div>
+    </div>
+</section>
+<!-- wrap-best-offer -->

@@ -1,0 +1,98 @@
+<!-- <h1>This is Basket Page</h1>
+<div >
+<h2>{{pharm.name}}</h2><br>
+<h2>{{price}}</h2><br>
+<h2>{{price/pharm.price}} ta </h2><br>
+<img src="http://localhost:5000/images/{{pharm.logo}}" width="200px" alt=""> 
+<br>
+</div>
+<button (click) = "order(pharm.name, price, price/pharm.price)" class="btn btn-success">Zakazat</button> -->
+
+
+
+<div class="profil bg-white">
+    <div class="container-a p-0">
+        <div class="row">
+            <div class="col-12"><a href="#" class="text-success">Bosh sahifa</a> / <h4 class="d-inline-block">Xaridlar
+                </h4>
+            </div>
+            <div class="col-lg-9 ">
+                <div class="bg-white card-product-about">
+
+                    <div *ngFor="let pharm of pharms, let i=index"
+                        class="row justify-content-center align-items-center d-flex py-2 card-product-border">
+                        <div class="col-3 text-center">
+                            <img src="/images/{{pharm.logo}}" alt="" class="img-fluid w-75">
+                        </div>
+                        <div class="col-7">
+                            <p> <b> {{pharm.name}} </b></p>
+                            <p>{{pharm.price}} so'm 1 donasi</p>
+                            <!-- <div class="d-inline-block"><span class="font-weight-bold text-success ">
+                                    {{pharm.price}}</span> so'm </div> -->
+                            <div class=" d-inline-block pl-3">
+
+                              
+
+                                <div *ngFor="let value of values">
+                                    <!-- <div class="drug-cost-about">
+                                         
+                                        <span>
+                                            <button class="drug-about-butto-left" (click)="min()">-</button>
+                                            <input type="text" placeholder="Nechta ?" #input value="{{q}}">
+                                            <button (click)="plus()" class="drug-about-butto-right">+</button>
+                                        </span>
+                                    </div> -->
+                                    <!-- <p>Bu dori {{pharm.price * q}} lik</p> -->
+                                    <mat-form-field>
+                                            <mat-label>Sonini tanlang...</mat-label>
+                                            <mat-select  #num (selectionChange)="add(num.value, pharm.price, pharm._id)" >
+                                              <mat-option *ngFor="let rate of soni[i]" value="{{rate}}" >{{rate}}</mat-option>
+                                             </mat-select>
+                                          </mat-form-field>
+                                   
+                                    <!-- <input class="form-control"  #input type="number" placeholder="Soni">
+
+                                    <button (click)="add(input.value, pharm.price, pharm._id)">
+                                            <mdb-icon far icon="check-circle" class="blue-text pr-3"></mdb-icon>
+                                            Tasdiqlash
+                                        </button> -->
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-2 text-center">
+                            <button>
+                                <!-- <mdb-icon far icon="check-circle" class="blue-text pr-3"></mdb-icon> -->
+                                <mdb-icon fas icon="trash" class="red-text pr-3"></mdb-icon>
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-lg-3 ">
+                <div class=" card-product-about p-3">
+                    <!-- <h3 class="font-weight-bold">Jami</h3> -->
+                    <div class="row">
+                        <!-- <div class="col-6">
+                            <div> Narxi:</div>
+                            <div> Jami to'lov:</div>
+                        </div>
+                        <div class="col-6">
+                            <div>  so‘m</div>
+                            <div></div>
+                        </div> -->
+                        <div class="px-4 w-100">
+                            <button class="btn btn-success text-white w-100  mt-4" routerLink="/order-pharm"
+                                (click)="myfunk()">Buyurtmani rasmiylashtirish</button>
+                            <!-- <a href="#" class="btn btn-success text-white w-100  mt-4">Buyurtmani rasmiylashtirish</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

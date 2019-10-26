@@ -1,0 +1,299 @@
+<div class="profil">
+  <div class="container p-0">
+    <div class="row">
+      <div class="col-12">
+        <h3>Buyurtmani rasmiylashtirish</h3>
+      </div>
+      <div class="col-lg-8">
+        <div class="profil-about">
+          <div class="h5  py-2 text-uppercase">Raqamni tasdiqlash *</div>
+
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <input *ngIf="!data" type="text" #number (change)="food = number.value" class="form-control is-valid"  
+                placeholder="+998 (__) (___-__-__)" prefix="+998 " mask="(00) 000 00 00"required>
+              <input *ngIf="data" type="text" class="form-control is-valid" id="validationServer01"
+                placeholder="{{person[0].number}}" required>
+              <div *ngIf="!data" class="valid-feedback text-dark">
+                Aktivatsiya kodini olish uchun telefon raqamingizni kiriting.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div *ngIf="activ"><input  type="number" #kod class="form-control is-valid" id="validationServer01"
+                placeholder="Enter kod" required><br><button (click)="registUser(food, kod.value)" class="btn btn-success">Enter</button></div>
+                
+              <button *ngIf="!data && !activ" (click)="verifynumber()" class="btn btn-success w-100">Aktivatsiya kodini olish</button>
+            
+            </div>
+          </div>
+
+        </div>
+
+        <div class="profil-about">
+          <div class="h5  py-2 text-uppercase">Bog'lanish uchun</div>
+         
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="validationServer02">Ism va sharifingiz</label>
+                <input *ngIf="!data" type="text" #name (change)="foo = name.value" class="form-control "   placeholder="..."
+                  required>
+                   
+                <input *ngIf="data" type="text" class="form-control is-valid" id="validationServer01"
+                  placeholder="{{person[0].name}}" required>
+                
+              </div>
+             
+             
+              <!-- <div class="col-md-6 mb-3">
+                <label for="validationServer02">Familiyangiz</label>
+                <input *ngIf="!data" type="text" class="form-control is-valid" id="validationServer02" placeholder="..."
+                  required>
+                <input *ngIf="data" type="text" class="form-control is-valid" id="validationServer02"
+                  placeholder="{{person[0].lastname}}" required>
+              </div> -->
+
+
+            </div>
+            <!-- <div class="form-row">
+                <div class="col-md-12 mb-3">
+                  <label for="validationServer02">Elektron pochta manzilingiz</label>
+                  <input type="text" class="form-control is-valid" id="validationServer02" placeholder="sh.xoltorayev@gmail.com"  required>
+                </div>
+              </div> -->
+           
+        </div>
+        <div class="profil-about">
+          <div class="h5 py-2 text-uppercase">Yetkazib berish turi *</div>
+          <div class="checkbox-div">
+            <div class="row">
+
+              <div class="col-sm-6">
+                <div class="pretty p-default p-round accordion">
+                  <input (click)="bool1()" type="radio" name="exampleRadios" id="exampleRadios111" value="option2">
+                  <div class="state p-success-o">
+                    <label>Uy yoki ofisga yetkazib berish</label>
+                  </div>
+                </div>
+
+              </div>
+
+
+              <div class="col-sm-6">
+                <div class="pretty p-default p-round w-100">
+                  <input (click)="bool()" type="radio" name="exampleRadios" id="exampleRadios111" value="option2">
+                  <div class="state p-success-o">
+                    <label>Xaridorni o'zi kelib olish</label>
+                  </div>
+                </div>
+              </div>
+
+
+
+            </div>
+          </div>
+        </div>
+        <div class="profil-about panel">
+          <form *ngIf="!bol">
+            <div class="form-row">
+
+              <div class="col-md-6 mb-3">
+                <select class="form-control is-valid" #fog style="background-image: none;" name="" id="">
+                  <option value="0" selected disabled> Tumanni kiriting</option>
+                  <option value="Olmazor tumani"> Olmazor tumani</option>
+                  <option value="Yunusobod tumani"> Yunusobod tumani</option>
+                  <option value="Chilonzor tumani"> Chilonzor tumani</option>
+                  <option value="Yashnobod tumani"> Yashnobod tumani</option>
+                  <option value="Mirzo Ulug'bek tumani"> Mirzo Ulug'bek tumani</option>
+                  </select>
+              </div>
+              <div class="col-md-6 mb-3">
+                <input type="text" #street  class="form-control is-valid" id="validationServer02" placeholder="Ko'cha *"
+                  required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <input type="text" #home class="form-control is-valid" id="validationServer02" placeholder="Uy raqami *"
+                  required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <input type="text" #number class="form-control is-valid" id="validationServer02" placeholder="Qavat, honadon " required>
+              </div>
+              <!-- <div class="col-md-6 mb-3">
+                <input type="text" class="form-control is-valid" id="validationServer02" placeholder="Podyezd "
+                  required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <input type="text" class="form-control is-valid" id="validationServer02" placeholder="Xonadon*"
+                  required>
+              </div> -->
+
+                <button (click)="select(fog.value, street.value, home.value, number.value)" class="btn btn-success  ">Tasdiqlash</button>
+
+
+            </div>
+          </form>
+        </div>
+
+
+        <div *ngIf="bol" class="profil-about panel">
+          <h3>Bizning manzil: Toshkent shahri, Chilonzor tumani. <br> Mo'ljal: Chilonzor metro <br> Telefon:; (71)
+            230-17-71</h3>
+        </div>
+
+
+        <div class="profil-about">
+          <div class="row">
+
+            <div class="col-lg-6">
+              <a (click)="pay1()">
+                <div class="my-2 wrap-profil-about-text relative">
+                  <div class="h5">Terminal orqali to'lov</div>
+                  <p>To'lov dorixonada va yetkazib berish xodimlari tomonidan buyurtma egasiga topshirilgan vaqtda
+                    o'zbek so'mida qabul qilinadi</p>
+                  <div class="d-inline-block"><img src="assets/website/img/card.png"></div>
+                  <img class="" *ngIf="icon" src="assets/website/img/pt1.png" alt=""
+                    style="width:30px;position: absolute;right: 40px;bottom: 30px;">
+                </div>
+
+              </a>
+            </div>
+
+            <div class="col-lg-6">
+              <a (click)="pay2()">
+                <div class="my-2 wrap-profil-about-text relative">
+                  <div class="h5">Naqt to'lash</div>
+                  <p>To'lov dorixonada va yetkazib berish xodimlari tomonidan buyurtma egasiga topshirilgan vaqtda
+                    o'zbek so'mida qabul qilinadi</p>
+                  <div class="d-inline-block"><img src="assets/website/img/money-bag.png" alt=""></div>
+                  <img class="" *ngIf="icon1" src="assets/website/img/pt1.png" alt=""
+                    style="width:30px;position: absolute;right: 40px;bottom: 30px;">
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-6 ">
+              <a (click)="pay()">
+                <div class=" my-2 relative wrap-profil-about-text">
+                  <div class="h5">Onlayn to'lov tizimi orqali</div>
+                  <p>To'lov dorixonada va yetkazib berish xodimlari tomonidan buyurtma egasiga topshirilgan vaqtda
+                    o'zbek so'mida qabul qilinadi</p>
+
+                  <img *ngIf="paycom" class="" src="assets/website/img/pt1.png" alt=""
+                    style="width:30px;position: absolute;right: 40px;bottom: 30px;">
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="paycom" class="profil-about">
+          <div class="h6 py-2 text-uppercase">To'lov turini tanlang</div>
+          <div class="checkbox-div">
+            <div class="row">
+              <div class="col-12">
+
+
+                <div class="pretty p-default p-round d-inline-block">
+                  <input (click)="click()" type="radio" name="exampleRadios" id="exampleRadios111" value="option2">
+
+                  <div class="state p-success-o">
+                    <label><img src="assets/website/img/payme.svg" alt=""></label>
+                  </div>
+                </div>
+
+
+                <div class="pretty p-default p-round d-inline-block">
+                  <input (click)="payme()" type="radio" name="exampleRadios" id="exampleRadios111" value="option2">
+
+                  <div class="state p-success-o">
+                    <label><img src="assets/website/img/payme.svg" alt=""></label>
+                  </div>
+                </div>
+
+
+                <!-- <div class="pretty p-default p-round d-inline-block">
+                      <input  type="radio" name="exampleRadios" id="exampleRadios111" value="option2">
+                    
+                    <div class="state p-success-o">
+                      <label><img src="assets/website/img/payme.svg" alt="" ></label>
+                    </div>
+                  </div>
+                  <div class="pretty p-default p-round d-inline-block">
+                      <input   type="radio" name="exampleRadios" id="exampleRadios111" value="option2">
+                    <div class="state p-success-o">
+                      <label><img src="assets/website/img/payme.svg" alt="" ></label>
+                    </div>
+                  </div> -->
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="profil-about">
+          <div class="h5  py-2 text-uppercase">Buyurtmaga izohingizni qoldiring * </div>
+          <form>
+            <div class="form-row">
+              <div class="col-md-12 mb-3">
+                <textarea name="" type="text" id="" class="form-control is-valid" id="validationServer01"
+                  placeholder="Mo'jal , Siz bilan bog'lanish uchun qo'shimcha telefon raqami va boshqa qo'shimcha malumotlar..."
+                  style="min-height: 100px;"></textarea>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+
+
+      <div class="col-lg-4 mt-3">
+        <div class="bg-white card-product-about" >
+          <div class="pl-3 pt-3">
+            <div class="h4 text-dark "> Buyurtmalar ro'yxati</div>
+          </div>
+
+
+          <div *ngFor="let pharm of pharms, let i=index"
+            class="row justify-content-center align-items-center d-flex py-2 card-product-border">
+            <div class="col-3 text-right">
+              <img src="/images/{{pharm.logo}}" alt="" class="img-fluid w-100">
+            </div>
+            <div class="col-9">
+              <p>{{pharm.name}}</p>
+              <div class="d-inline-block">{{rate[i]}} dona x <span class="font-weight-bold text-black ">
+                  {{pharm.price}} so'm
+                </span> </div>
+            </div>
+          </div>
+
+          <div class="p-3">
+            <h6>Tanlangan to‘lov usuli va yetkazib berish turi</h6>
+
+            <div><b>Yetkazib berish : </b></div>
+            <div> {{manzil}}</div>
+            <div *ngIf="!bol">
+              <div class="text-dark py-2"> <b>Manzil :</b> </div>
+
+              <div>{{address}}</div>
+
+
+            </div>
+            <div class="text-dark py-2"><b>To‘lov usuli: </b> </div>
+            <div>{{tolov}}</div>
+            <div *ngIf="paycom">
+              <p><b>To'lov sistemasi : </b></p>
+              <p>{{system}}</p>
+            </div>
+            <hr>
+            <div class="pr-3"> Jami: <span class="text-dark font-weight-bold float-right">{{sum}} so'm</span></div>
+            <hr>
+            <button  *ngIf="!data" (click)="order(foo, food)"  class="btn btn-success text-uppercase w-100" style="letter-spacing: 1px;"> Buyurtmani rasmiylashtirish</button>
+            <button  *ngIf="data" (click)="order(person[0].name, person[0].number)"  class="btn btn-success text-uppercase w-100" style="letter-spacing: 1px;"> Buyurtmani Rasmiylashtirish</button>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

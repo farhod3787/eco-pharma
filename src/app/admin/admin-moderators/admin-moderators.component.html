@@ -1,0 +1,76 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">All Pharms</h1>
+    <p class="mb-4">DataTables is a third party plugin that is used to generate 
+      the demo table below. For more information about DataTables, please visit the official 
+      DataTables documentation.</p>
+
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Add new Moderator</h6>
+          </div>
+      <div class="container">
+      <div class="row">
+          <div class="col">
+              <div class="md-form">
+              <input type="text"  #login class="form-control"
+              mdbInput>
+            <label for="materialRegisterFormFirstName">Login</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="md-form">
+            <input type="password"  #pass class="form-control"
+            mdbInput>
+          <label for="materialRegisterFormFirstName">Password</label>
+          </div>
+        </div>
+          <div class="col-12 col-md-auto">
+              <div class="md-form">
+              <input type="email" #email  class="form-control"
+              mdbInput>
+            <label for="materialRegisterFormLastName">Email</label>
+            </div>
+          </div>
+          <div class="col col-lg-2">
+              <div class="md-form">
+              <button mdbBtn type="button" color="success"
+              (click)="add(login.value, pass.value, email.value)"
+              
+              outline="true" mdbWavesEffect>Add</button>
+              </div>
+          </div>
+        </div>
+        </div>
+        </div>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">All Moderators</h6>
+          </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+              <tr>
+                <th>Login</th>
+                <th>Email</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr *ngFor= "let moderator of moderators">
+                <th>{{moderator.login}}</th>
+                <th>{{moderator.email}}</th>
+                <th> <button mdbBtn type="button" color="danger" rounded="true" (click)="delete(moderator._id)" mdbWavesEffect>Delete</button></th>
+            </tfoot>
+          </table>
+ 
+
+        </div>
+      </div>
+    </div>
+
+  </div>

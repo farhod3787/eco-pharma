@@ -1,0 +1,50 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Muvaffaqiyatli tugagan buyurtmalar</h1>
+    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
+    
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Tel. Number</th>
+                <th>Dorilar va soni</th>
+                <th>Umumiy summa</th>
+                <th>Vaqt</th>
+                <th>To'lov turi </th>
+                <th>Carta raqami</th>
+                <th>Yetkazib berish turi</th>
+                <th>Manzil</th>
+                <th>Status</th>
+                <th>O'chirish</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr *ngFor= "let order of orders, let i=index">
+                <th>{{i+1}}</th>
+                <th>{{order.telnumber}}</th>
+                <th><p *ngFor = "let pharm of pharms[i], let j=index">
+                  <b>{{pharm.name}}</b> dan <b>{{rate[i][j]}}</b> ta </p><br></th>
+                <th>{{order.rate}}</th>
+                <th>{{order.date}}</th>
+                <th>{{order.payType}} </th>
+                <th>{{order.scoreNumber}}</th>
+                <th>{{order.forward}}</th>
+                <th>{{order.address}}</th>
+                <th style="color: green">{{order.status}}</th>
+                <th><button (click)="delete(order._id)" ><mdb-icon size="2x" class="red-text pr-3" fas icon="trash"></mdb-icon></button></th>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
