@@ -21,11 +21,15 @@
               </div>
             </div>
             <div class="col-12 col-md-auto">
-
+                <div class="md-form">
+                  <select #id class="form-control">
+                    <option *ngFor = "let cat of categorys" value='{{cat._id}}'>{{cat.name}}</option>
+                  </select>
+              </div>
             </div>
             <div class="col col-lg-2">
                 <div class="md-form">
-                <button mdbBtn type="button" color="success" (click)="add(name.value )" outline="true" mdbWavesEffect>Add</button>
+                <button mdbBtn type="button" color="success" (click)="add(name.value, id.value)" outline="true" mdbWavesEffect>Add</button>
                 </div>
             </div>
           </div>
@@ -49,7 +53,7 @@
             </tr>
           </thead>
 
-            <tr *ngFor ="let cat of category, let i=index">
+            <tr *ngFor ="let cat of podcategorys, let i=index">
               <th>{{i+1}}</th>
               <th>{{cat.name}}</th>
               <th> <button mdbBtn type="button" color="danger" (click) = "deleteCategory(cat._id)" outline="true" mdbWavesEffect>Delete</button>  </th>

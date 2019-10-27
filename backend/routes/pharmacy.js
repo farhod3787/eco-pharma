@@ -7,7 +7,6 @@ const multer = require('multer');
 
 const router = express.Router();
 
-
 const MIME_TYPE_MAP = {
     'image/png': 'png',
     'image/jpg': 'jpg',
@@ -42,20 +41,18 @@ router.post('/post/:token', multer({ storage: storage }).single('image'), async(
     var pharm = {
         name: body.name,
         logo: file.filename,
-        // logo: body.logo,
-        // logo: file.originalname
         price: body.price,
         inform: body.inform,
         sort: body.sort,
         sale: body.sale,
         roomy: body.roomy,
-
+        pod_category: body.pod_category,
         rate: body.rate
     }
     var pharmacy = new Pharmacy(pharm);
 
     if (obj.isModerator) {
-        console.log("AAAAAA");
+        console.log("AAAAAA" + body.pod_category);
         console.log(pharmacy);
 
         pharmacy.save().then(res => {

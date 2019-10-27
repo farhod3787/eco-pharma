@@ -31,6 +31,9 @@ import { AdminOrdersSuccessComponent } from './admin/admin-orders-success/admin-
 import { OrdersDoingComponent } from './admin/orders-doing/orders-doing.component';
 import { SearchComponent } from './website/search/search.component';
 import { ComparisonComponent } from './website/comparison/comparison.component';
+import { AdminPodCategoryComponent } from './admin/admin-pod-category/admin-pod-category.component';
+import { AdminRetseptComponent } from './admin/admin-retsept/admin-retsept.component';
+import { AdminRetseptTrueComponent } from './admin/admin-retsept-true/admin-retsept-true.component';
 
 
 
@@ -50,7 +53,10 @@ const routes: Routes = [
             { path: 'update/:id', component: AdminAddPharmComponent},
             { path: 'category', component: AdminCategoryComponent},
             { path : 'moderators', component: AdminModeratorsComponent},
-            { path: 'users', component: AdminUsersComponent}
+            { path: 'users', component: AdminUsersComponent},
+            { path: 'pod-category', component: AdminPodCategoryComponent},
+            { path: 'retsept', component: AdminRetseptComponent},
+            { path: 'retsepts-true', component: AdminRetseptTrueComponent}
         ]
     },
     {
@@ -78,11 +84,11 @@ const routes: Routes = [
         ]
     },
   ];
-  
-  
+
+
   @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
   })
   export class AppRoutingModule { }
-  
+

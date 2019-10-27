@@ -69,16 +69,30 @@
         </div>
         <div class="form-row">
             <div class="col">
-        <div class="md-form">         
-                     <select (ngModel)="roomy" formControlName="roomy"  placeholder="Enter Category" class="browser-default custom-select" name="category" id="category">
-                       <option value="{{cat.name}}"  *ngFor = "let cat of categorys" >{{cat.name}}</option>
+        <div class="md-form">
+                     <select (ngModel)="roomy"  formControlName="roomy"  placeholder="Enter Category" class="browser-default custom-select" name="category" id="category">
+                       <option value="{{cat.name}}"  *ngFor = "let cat of categorys" >
+                        <div (click)="categor(cat._id)" > {{cat.name}} </div>
+
+                        </option>
                      </select>
+
+
+                     <select (ngModel)="pod_category" formControlName="pod_category"  placeholder="Enter Category" class="browser-default custom-select" name="pod_category" id="pod_category">
+                        <option value="{{cat.name}}"  *ngFor = "let cat of podcategory" >
+                        <div> {{cat.name}} </div>
+
+                        </option>
+                      </select>
+
+
+
           <!-- <input type="text" formControlName="roomy" id="materialRegisterFormLastName" class="form-control" mdbInput>
           <label for="materialRegisterFormLastName">Roomy</label> -->
         </div>
         </div>
         <div class="col">
-          
+
             <div class="md-form">
                 <input type="number" formControlName="sale" id="materialRegisterFormLastName" class="form-control" mdbInput>
                 <label for="materialRegisterFormLastName">Sale</label>
@@ -86,7 +100,7 @@
         </div>
 
         </div>
- 
+
         <!-- <input  class="form-control" type="text" formControlName="name" placeholder="Post Title"  mdbInput> -->
 
         <div class="md-form">

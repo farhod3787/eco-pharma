@@ -1,4 +1,4 @@
- 
+
 <html lang="en">
 <body id="page-top">
 
@@ -38,6 +38,11 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
+          <a class="nav-link" routerLink='retsept' >
+              <mdb-icon fas icon="sign-out-alt"></mdb-icon>
+            <span>Retsept</span></a>
+        </li>
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
           <span>Buyurtmalar</span>
@@ -48,6 +53,9 @@
             <a class="collapse-item" routerLink="/admin/orders">Yangi buyutrmalar</a>
             <a class="collapse-item" routerLink="/admin/orders-doing">Amaldagi buyurtmalar</a>
             <a class="collapse-item" routerLink="/admin/orders-success">Yakunlangan buyurtmalar</a>
+            <h6 class="collapse-header">Rasmli Buyurtmalar :</h6>
+            <a class="collapse-item" routerLink="/admin/retsepts-true">Rasmli buyurtmalar</a>
+
           </div>
         </div>
       </li>
@@ -63,6 +71,7 @@
             <h6 class="collapse-header">Sozlamalar:</h6>
             <a class="collapse-item" routerLink="/admin/pharms">Dorilar</a>
             <a class="collapse-item" routerLink="category">Kategoriyalar</a>
+            <a class="collapse-item" routerLink="pod-category">Pod Kategoriyalar</a>
             <a class="collapse-item" routerLink = "moderators">Moderatorlar</a>
             <a class="collapse-item" routerLink = "users">Userlar</a>
           </div>
@@ -72,39 +81,6 @@
       <!-- Divider -->
       <hr class="sidebar-divider">
 
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Addons
-      </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Login</a>
-            <a class="collapse-item" href="register.html">Register</a>
-            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-            <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item" href="blank.html">Blank Page</a>
-          </div>
-        </div>
-      </li>
- 
-      
-
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" (click)="alarm()" >
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
-      </li>
       <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#logoutModal" >
               <mdb-icon fas icon="sign-out-alt"></mdb-icon>
@@ -221,7 +197,7 @@
             </li>
 
             <!-- Nav Item - Messages -->
-          
+
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -305,7 +281,7 @@
       </div>
     </div>
   </div>
-  
+
 
 </body>
 

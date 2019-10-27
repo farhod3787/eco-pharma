@@ -8,10 +8,10 @@ export class AuthService {
 
   constructor(private http: Http) { }
 
-  // url = "http://localhost:5000"
+  url = "http://localhost:5000"
 
-  url = "https://eco-pharmacy.herokuapp.com"
-  
+  // url = "https://eco-pharmacy.herokuapp.com"
+
   // url = "";
 
   postLogin(body) {

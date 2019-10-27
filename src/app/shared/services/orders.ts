@@ -4,13 +4,13 @@ import { Http } from '@angular/http';
     providedIn: 'root'
   })
   export class OrdersService {
-  
-    constructor(private http: Http) { 
+
+    constructor(private http: Http) {
 
     }
-  // url = "http://localhost:5000"
+  url = "http://localhost:5000"
     // url = "";
-  url = "https://eco-pharmacy.herokuapp.com"
+  // url = "https://eco-pharmacy.herokuapp.com"
 
 
     get() {
@@ -23,11 +23,11 @@ import { Http } from '@angular/http';
     getdoing() {
       return this.http.get( this.url + '/api/orders/getdoing');
     }
-  
+
     post(body) {
       return this.http.post(this.url + '/api/orders/post/' + localStorage.getItem('token'), body);
     }
-    
+
     patch(id, body) {
       return this.http.patch(this.url + '/api/orders/update/' + id + '/' + localStorage.getItem('token'), body); // Success
     }
@@ -39,8 +39,8 @@ import { Http } from '@angular/http';
     delete(id) {
       return this.http.delete( this.url + '/api/orders/delete/' + id);
     }
-   
-  
-  
-  
+
+
+
+
   }

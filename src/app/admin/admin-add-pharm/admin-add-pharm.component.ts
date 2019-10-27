@@ -5,6 +5,7 @@ import { PharmsServices } from './../../shared/services/pharms'
 import { Pharm } from 'src/app/shared/models/pharm';
 import { CategoryService } from 'src/app/shared/services/category';
 import Swal from 'sweetalert2'
+import { PodCategoryService } from 'src/app/shared/services/podcategory';
 
 
 @Component({
@@ -18,16 +19,19 @@ export class AdminAddPharmComponent implements OnInit {
   private postId: string
   post: Pharm;
   categorys = [];
+  podcategory = [];
   roomy: any;
   form: FormGroup;
 
   constructor(
     private srv: PharmsServices,
     private categoryService: CategoryService,
+    private podcategoryService: PodCategoryService,
     public route: ActivatedRoute,
     private router : Router
   ) {
-    this.getCategory()
+    this.getCategory();
+    this.getPodCategory()
 
   }
 
@@ -46,6 +50,7 @@ export class AdminAddPharmComponent implements OnInit {
 
       sale: new FormControl(null, { validators: [Validators.required] }),
       roomy: new FormControl(null, { validators: [Validators.required] }),
+      pod_category: new FormControl(null, { validators: [Validators.required] }),
       inform: new FormControl(null, { validators: [Validators.required] }),
       rate: new FormControl(null, { validators: [Validators.required] })
     });
@@ -68,6 +73,7 @@ export class AdminAddPharmComponent implements OnInit {
             sort1: postData.sort[1],
             sort2: postData.sort[2],
             roomy: postData.roomy,
+            pod_category: postData.pod_category,
             inform: postData.inform,
             rate: postData.rate
           };
@@ -81,6 +87,7 @@ export class AdminAddPharmComponent implements OnInit {
             sort2: this.post.sort2,
             sale: this.post.sale,
             roomy: this.post.roomy,
+            pod_category: this.post.pod_category,
             inform: this.post.inform,
             rate: this.post.rate
           });
@@ -108,7 +115,6 @@ export class AdminAddPharmComponent implements OnInit {
 
   onSave() {
     if (this.mode == "create") {
-
       if (this.form.value.sale !== 0) {
         this.form.value.price = this.form.value.price * (1 - this.form.value.sale / 100);
       }
@@ -123,6 +129,7 @@ export class AdminAddPharmComponent implements OnInit {
 
         this.form.value.sale,
         this.form.value.roomy,
+        this.form.value.pod_category,
         this.form.value.inform,
         this.form.value.rate
       )
@@ -144,6 +151,7 @@ export class AdminAddPharmComponent implements OnInit {
         this.form.value.sort2,
         this.form.value.sale,
         this.form.value.roomy,
+        this.form.value.pod_category,
         this.form.value.inform,
         this.form.value.rate
       ).subscribe(err => {
@@ -175,6 +183,16 @@ export class AdminAddPharmComponent implements OnInit {
     this.categoryService.get().subscribe(res => {
       this.categorys = res.json();
     })
+  }
+
+  getPodCategory() {
+    this.podcategoryService.get().subscribe(res =>{
+      this.podcategory = res.json()
+    })
+  }
+
+  categor(id) {
+    console.log(id)
   }
 
 

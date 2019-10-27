@@ -3,15 +3,15 @@ import { Http } from '@angular/http';
 @Injectable({
     providedIn: 'root'
   })
-  export class CategoryService {
+  export class PodCategoryService {
 
     constructor(private http: Http) {
 
     }
 
-    url = "http://localhost:5000/api/categories";
+    url = "http://localhost:5000/api/podcategory";
     // url = "/api/categories";
-    // url = "https://eco-pharmacy.herokuapp.com/api/categories"
+    // url = "https://eco-pharmacy.herokuapp.com/api/podcategory"
 
 
     get() {

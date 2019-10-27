@@ -8,6 +8,7 @@ export interface Pharm {
     sort1: String,
     sort2: String,
     roomy: String,
+    pod_category: String,
     inform: String,
     rate: Number
-}   
+}

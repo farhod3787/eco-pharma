@@ -4,13 +4,13 @@ import { Http } from '@angular/http';
     providedIn: 'root'
   })
   export class ModeratorsServices {
-  
-    constructor(private http: Http) { 
+
+    constructor(private http: Http) {
 
     }
-  // url = "http://localhost:5000/api/users"
+  url = "http://localhost:5000/api/users"
     // url = "/api/users";
-  url = "https://eco-pharmacy.herokuapp.com/api/users"
+  // url = "https://eco-pharmacy.herokuapp.com/api/users"
 
 
     get() {

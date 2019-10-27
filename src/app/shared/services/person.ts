@@ -8,9 +8,9 @@ export class PersonService {
 
   constructor(private http: Http) { }
 
-    // url = "http://localhost:5000/api/person"; 
+    url = "http://localhost:5000/api/person";
     // url = "/api/person";
-    url = "https://eco-pharmacy.herokuapp.com/api/person"
+    // url = "https://eco-pharmacy.herokuapp.com/api/person"
 
 
     get() {

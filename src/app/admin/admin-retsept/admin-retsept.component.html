@@ -1,0 +1,39 @@
+<div class="container-fluid">
+
+    <mdb-card>
+
+      <mdb-card-header class="info-color white-text text-center py-4">
+        <h5>
+          <strong>Retsept</strong>
+        </h5>
+      </mdb-card-header>
+
+      <!--Card content-->
+      <mdb-card-body class="px-lg-5 pt-0">
+        <div >
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <tr>
+              <td>Photo</td>
+              <td>Number</td>
+              <td>Qabul qilish</td>
+              <td>Delete</td>
+            </tr>
+            <tr *ngFor = "let rets of retsepts">
+              <td>
+                <a href="http://localhost:5000/images/{{rets.logo}}" target="_blank">
+                <img width="250px" src="http://localhost:5000/images/{{rets.logo}}" alt="">
+              </a>
+              </td>
+              <td> <h3>{{rets.number}}</h3> </td>
+              <td><button  mdbBtn type="button" color="success" rounded="true"  mdbWavesEffect>Qabul</button> </td>
+              <td><button  mdbBtn type="button" color="danger" rounded="true" (click)="delete(rets._id)" mdbWavesEffect>Delete</button></td>
+              </tr>
+          </table>
+
+
+        </div>
+
+
+      </mdb-card-body>
+    </mdb-card>
+ </div>

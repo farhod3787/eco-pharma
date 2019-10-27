@@ -4,14 +4,14 @@ import { Http } from '@angular/http';
     providedIn: 'root'
   })
   export class PharmsServices {
-  
-   
-    constructor(private http: Http) { 
+
+
+    constructor(private http: Http) {
 
     }
-  // url = "http://localhost:5000/api/pharm"
+  url = "http://localhost:5000/api/pharm"
   // url = "/api/pharm";
-    url = "https://eco-pharmacy.herokuapp.com/api/pharm"
+    // url = "https://eco-pharmacy.herokuapp.com/api/pharm"
 
     get() {
       return this.http.get(this.url + '/getall');
@@ -25,9 +25,10 @@ import { Http } from '@angular/http';
       sort: string,
       sort1: string,
       sort2: string,
-      
+
       sale: string,
       roomy: string,
+      pod_category: string,
       inform: string,
       rate: string
      ) {
@@ -39,11 +40,13 @@ import { Http } from '@angular/http';
       Pharm.append("sort[0]", sort);
       Pharm.append("sort[1]", sort1);
       Pharm.append("sort[2]", sort2);
-      
+
       Pharm.append("sale", sale);
       Pharm.append("roomy", roomy);
+      Pharm.append("pod_category", pod_category);
       Pharm.append("inform", inform);
       Pharm.append("rate", rate);
+      console.log(pod_category)
       return this.http
       .post(this.url +'/post/' + localStorage.getItem('token'), Pharm)
       .subscribe( response =>{
@@ -84,8 +87,9 @@ import { Http } from '@angular/http';
       sort2: string,
       sale: string,
       roomy: string,
+      pod_category: string,
       inform: string,
-      rate: string ) 
+      rate: string )
       {
       const Pharm = new FormData();
       Pharm.append("name", name);
@@ -95,9 +99,10 @@ import { Http } from '@angular/http';
       Pharm.append("sort[0]", sort);
       Pharm.append("sort[1]", sort1);
       Pharm.append("sort[2]", sort2);
-      
+
       Pharm.append("sale", sale);
       Pharm.append("roomy", roomy);
+      Pharm.append("pod_category", pod_category);
       Pharm.append("inform", inform);
       Pharm.append("rate", rate);
 
@@ -109,6 +114,6 @@ import { Http } from '@angular/http';
     }
 
 
-  
-  
+
+
   }

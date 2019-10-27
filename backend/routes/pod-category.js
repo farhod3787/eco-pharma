@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router();
-const Categories = require('../models/categories');
+const PodCategory = require('../models/pod-category');
 const User = require('../models/users')
 
 router.post('/post/:token', async (request, response, next) =>{
@@ -10,13 +10,14 @@ router.post('/post/:token', async (request, response, next) =>{
 
     if(obj.isModerator) {
         var body = request.body;
-        var categori = {
+        var podcategori = {
             name: body.name,
+            category_id : body.category_id
     }
-    const categories = new Categories(categori);
+    const categories = new PodCategory(podcategori);
 
     categories.save().then( res => {
-        response.status(200).json({message: "New Categories Added"})
+        response.status(200).json({message: "New Pod Categories Added"})
     })
     .catch( err =>{
         console.log(err);
@@ -29,7 +30,7 @@ router.post('/post/:token', async (request, response, next) =>{
 })
 
 router.get('/get', (request, response, next) =>{
-    Categories.find().then( all =>{
+    PodCategory.find().then( all =>{
         response.status(200).json(all);
     }).catch( err =>{
         console.log(err)
@@ -40,7 +41,7 @@ router.get('/get', (request, response, next) =>{
 
 router.get('/getCategory/:id', (request, response) => {
         var id = request.params.id;
-        Categories.findById(id).then( one => {
+        PodCategory.findById(id).then( one => {
             response.status(200).json(one);
         }).catch( err =>{
             console.log(err);
@@ -55,7 +56,7 @@ router.delete('/delete/:id/:token', async (request, response, next) =>{
 
         var obj = User.verifyOfUser(users, token);
         if(obj.isModerator) {
-            await Categories.findByIdAndDelete(id).then( res =>{
+            await PodCategory.findByIdAndDelete(id).then( res =>{
                     response.status(200).json({message: "Category Deleted !"})
             }).catch( err =>{
                     console.log(err);
@@ -75,7 +76,7 @@ router.patch('/update/:id/:token', async (request, response, next) =>{
 
     var obj = User.verifyOfUser(users, token);
     if (obj.isModerator) {
-        await Categories.findByIdAndUpdate(id, {$set: body}, {new: true}).then( res =>{
+        await PodCategory.findByIdAndUpdate(id, {$set: body}, {new: true}).then( res =>{
                 if(res) {
                     response.status(200).json({message: "Category Updated"});
                 }

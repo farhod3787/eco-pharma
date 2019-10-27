@@ -19,12 +19,12 @@ export class AdminCategoryComponent implements OnInit {
 
   getall() {
     this.service.get().subscribe( res =>{
-      this.category = res.json();  
+      this.category = res.json();
     })
   }
 
-  add(name, id) {
-    this.service.post({name: name, id: id}).subscribe( res =>{
+  add(name ) {
+    this.service.post({name: name }).subscribe( res =>{
       alert("New Category Added");
       this.getall();
     })

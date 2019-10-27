@@ -14,7 +14,7 @@ export class AdminPharmsComponent implements OnInit {
   pharms = [];
 
 
-  displayedColumns: string[] = ['id', 'name', 'progress', 'color', 'rate', 'sale', 'roomy','edit', 'delete'];
+  displayedColumns: string[] = ['id', 'name', 'progress', 'color', 'rate', 'sale', 'roomy', 'pod_category', 'edit', 'delete'];
   dataSource;
 
     @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
@@ -28,6 +28,7 @@ export class AdminPharmsComponent implements OnInit {
 
    myFunction() {
     this.srv.get().subscribe( res =>{
+      console.log(res.json())
       this.dataSource = new MatTableDataSource(res.json());
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
@@ -50,7 +51,7 @@ export class AdminPharmsComponent implements OnInit {
   //      var obj = res.json();
   //      this.pharms = obj;
   //      console.log(this.pharms);
-  //    }) 
+  //    })
   //  }
 
 

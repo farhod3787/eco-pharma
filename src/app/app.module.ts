@@ -11,10 +11,10 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {NgxMaskModule} from 'ngx-mask'
 
-import { 
+import {
   MatInputModule,
   MatFormFieldModule,
-  MatButtonModule, 
+  MatButtonModule,
   MatCheckboxModule,
   MatPaginatorModule,
   MatTableModule,
@@ -62,6 +62,9 @@ import { LanguageComponent } from './website/language/language.component';
 import { OrderPharmComponent } from './website/order-pharm/order-pharm.component';
 import { SearchComponent } from './website/search/search.component';
 import { ComparisonComponent } from './website/comparison/comparison.component';
+import { AdminPodCategoryComponent } from './admin/admin-pod-category/admin-pod-category.component';
+import { AdminRetseptComponent } from './admin/admin-retsept/admin-retsept.component';
+import { AdminRetseptTrueComponent } from './admin/admin-retsept-true/admin-retsept-true.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -83,6 +86,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AdminModeratorsComponent,
     AdminUsersComponent,
     AdminOrdersSuccessComponent,
+    AdminPodCategoryComponent,
+    AdminRetseptComponent,
+    AdminRetseptTrueComponent,
     OrdersDoingComponent,
     BestOfferComponent,
     WithSaleComponent,
@@ -108,7 +114,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     SearchComponent,
     ComparisonComponent
   ],
-  
+
   imports: [
     MatFormFieldModule,
     MatInputModule,
@@ -135,10 +141,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
           useFactory: HttpLoaderFactory,
           deps: [HttpClient]
       }
-  }) 
+  })
   ],
- 
- 
+
+
   providers: [],
   bootstrap: [AppComponent]
 })

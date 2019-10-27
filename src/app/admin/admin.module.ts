@@ -15,6 +15,9 @@ import { AdminModeratorsComponent } from './admin-moderators/admin-moderators.co
 import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { AdminOrdersSuccessComponent } from './admin-orders-success/admin-orders-success.component';
 import { OrdersDoingComponent } from './orders-doing/orders-doing.component';
+import { AdminPodCategoryComponent } from './admin-pod-category/admin-pod-category.component';
+import { AdminRetseptComponent } from './admin-retsept/admin-retsept.component';
+import { AdminRetseptTrueComponent } from './admin-retsept-true/admin-retsept-true.component';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { OrdersDoingComponent } from './orders-doing/orders-doing.component';
         AdminModeratorsComponent,
         AdminUsersComponent,
         AdminOrdersSuccessComponent,
-        OrdersDoingComponent
+        OrdersDoingComponent,
+        AdminPodCategoryComponent,
+        AdminRetseptComponent,
+        AdminRetseptTrueComponent
     ],
     imports: [
       AdminRoutingModule,
