@@ -22,6 +22,19 @@ export class AdminRetseptComponent implements OnInit {
     })
   }
 
+  qabul(id) {
+    var body = {}
+    this.retseptService.patch(id, body).subscribe( res =>{
+      if (res) {
+        alert("OK")
+      }
+      else {
+        alert("Error")
+      }
+      this.get()
+
+    })
+  }
   delete(id){
     this.retseptService.delete(id).subscribe( res =>{
       if(res) {

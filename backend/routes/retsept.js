@@ -48,7 +48,7 @@ router.post('/create', multer({ storage: storage }).single('image'), async(reque
 })
 
 router.get('/get', async (request, response) =>{
-   await Retsept.find().then( res =>{
+   await Retsept.find({status: false}).then( res =>{
     response.status(200).json(res)
   }).catch (err =>{
     response.status(400).json(err)
@@ -79,6 +79,26 @@ router.delete('/:id' , async (request, response) =>{
     response.status(200).json(res)
   }).catch( err =>{
     response.status(400).json(err)
+  })
+})
+
+router.patch('/:id', async function(request, response) {
+  var id = request.params.id;
+  let body = {};
+  Retsept.findById(id).then(res => {
+    body = res;
+    body.status = true;
+      Retsept.findByIdAndUpdate(id, { $set: body }, { new: true }).then(res => {
+
+          if (res) {
+              response.status(200).json({ message: "Status: True" })
+          } else {
+              response.status(400).json({ message: "Error in status" })
+          }
+      }).catch(err => {
+          console.log(err);
+          response.status(400).json(err);
+      })
   })
 })
 

@@ -30,6 +30,7 @@ export class AdminRetseptTrueComponent implements OnInit {
       else {
         alert("Error")
       }
+      this.get()
     })
   }
 

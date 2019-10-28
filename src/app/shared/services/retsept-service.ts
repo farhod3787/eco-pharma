@@ -27,7 +27,10 @@ import { Http } from '@angular/http';
     }
 
     delete (id) {
-        return this.http.delete(this.url + '/delete/' + id );
+        return this.http.delete(this.url + '/' + id );
+    }
+    patch(id, body) {
+      return this.http.patch(this.url + '/' + id, body)
     }
 
 
