@@ -5,6 +5,43 @@ const Orders = require('../models/orders');
 
 const BOT_TOKEN = "some_token";
 
+
+const multer = require('multer');
+
+const MIME_TYPE_MAP = {
+    'image/png': 'png',
+    'image/jpg': 'jpg',
+    'image/jpeg': 'jpg'
+}
+
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        console.log(file.mimetype);
+
+        const isValid = MIME_TYPE_MAP[file.mimetype];
+        let error = new Error("Errorrr");
+        if (isValid) {
+            error = null;
+        }
+        cb(error, "backend/recipe");
+    },
+    filename: (req, file, cb) => {
+        const name = file.originalname.toLowerCase().split(' ').join('-');
+        const ext = MIME_TYPE_MAP[file.mimetype];
+        cb(null, name + '-' + Date.now() + '.' + ext);
+    }
+})
+
+
+router.post(`/${BOT_TOKEN}/recipe`, multer({ storage: storage }).single('file'), (request, response) => {
+    console.log(request.file);
+    console.log(request.body);
+
+    response.status(200).json({})
+});
+
+
 router.get(`/${BOT_TOKEN}/pharms`, (request, response) => {
     Pharmacy.find().then(pharms => {
         response.status(200).json({ pharms })
