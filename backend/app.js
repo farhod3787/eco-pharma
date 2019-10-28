@@ -41,6 +41,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', express.static(path.join(__dirname, '../dist/online-pharmacy')))
 
 app.use('/images', express.static(path.join("backend/images")));
+app.use('/recipe', express.static(path.join("backend/recipe")));
 
 
 app.use((req, res, next) => {

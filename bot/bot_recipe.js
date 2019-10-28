@@ -3,7 +3,7 @@ const api_token = '953294682:AAEJOGXFZmlMay9QDohrRTJqw3lEb8VALjY';
 
 const request = require("request")
 
-let url = "http://localhost:5000/api/bot/some_token"
+let url = "http://localhost:5000/api"
 
 const bot = new TelegramBot(api_token, {
     polling: {
@@ -34,11 +34,11 @@ bot.on('message', function(msg, match) {
                 let photoURL = `https://api.telegram.org/file/bot${api_token}/` + path;
 
                 var formData = {
-                    chat_id: msg.chat.id,
-                    file: request(photoURL)
+                    number: msg.chat.id,
+                    image: request(photoURL)
                 };
                 request.post({
-                    url: url + '/recipe',
+                    url: url + '/retsept/create',
                     formData: formData
                 }, async(err, res, body) => {
                     if (err) { console.log(err); return; }
