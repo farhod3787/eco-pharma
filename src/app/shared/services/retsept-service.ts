@@ -22,8 +22,14 @@ import { Http } from '@angular/http';
       return this.http.get(this.url + '/getTrue')
     }
 
-    post(body) {
-        return this.http.post(this.url + '/create', body);
+    post(
+      number: string,
+      image: File | string
+    ) {
+      const Retsept = new FormData();
+      Retsept.append("number", number);
+      Retsept.append("image", image);
+        return this.http.post(this.url + '/create', Retsept);
     }
 
     delete (id) {

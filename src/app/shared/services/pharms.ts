@@ -46,7 +46,6 @@ import { Http } from '@angular/http';
       Pharm.append("pod_category", pod_category);
       Pharm.append("inform", inform);
       Pharm.append("rate", rate);
-      console.log(pod_category)
       return this.http
       .post(this.url +'/post/' + localStorage.getItem('token'), Pharm)
       .subscribe( response =>{

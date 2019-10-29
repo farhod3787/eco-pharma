@@ -34,7 +34,7 @@ router.post('/create', multer({ storage: storage }).single('image'), async(reque
 
     var retsept = {
         number: body.number,
-        logo: file.filename,
+        image: file.filename,
         status: false
     }
     var retsep = new Retsept(retsept);
