@@ -235,20 +235,15 @@
                   <img src="assets/website/img/Новая папка (2)/logo_orign (3).png" alt="" style="width: 150px;">
               </div>
           </div>
-      <form [formGroup]="form" (submit)="onSave()">
-
+      <form [formGroup]="form" (submit)="retsept()">
           <div class="modal-body py-0">
               <p>Vrach tavsiya qilgan retseptni rasmini bizga jo'nating. Biz sizga qayta aloqaga chiqamiz</p>
-
-
               <label>
             <div class="w-100 modal-input">
-
-              <input type="file" #file formControlName="logo" class="form-control" placeholder="Photo" mdbInput>
+              <input type="file" #file formControlName="image" class="form-control" placeholder="Photo" mdbInput>
               <br><br>
                 <input type="text" formControlName="number"  #phone prefix="+998 " mask="(00) 000 00 00" class="form-control" placeholder="Enter Phone Number" mdbInput>
             </div>
-
           </label>
           </div>
           <div class="modal-footer border-t-0" style="border-top: 0;">

@@ -22,15 +22,19 @@ import { Http } from '@angular/http';
       return this.http.get(this.url + '/getTrue')
     }
 
-    post(
-      number: string,
-      image: File | string
-    ) {
-      const Retsept = new FormData();
-      Retsept.append("number", number);
-      Retsept.append("image", image);
+      post (
+        number: string,
+        image: File
+      ) {
+        const Retsept = new FormData();
+        Retsept.append('number', number);
+        Retsept.append('image', image);
+
         return this.http.post(this.url + '/create', Retsept);
-    }
+
+
+      }
+
 
     delete (id) {
         return this.http.delete(this.url + '/' + id );

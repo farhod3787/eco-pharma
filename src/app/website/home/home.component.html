@@ -45,13 +45,16 @@
                 <button routerLink='/pharms' class="shopping-button-all">Hammasi <i class="fa fa-angle-right"></i></button>
               </div>
               <div class="shopping-menu">
-                <div class="shopping-menu-text">
+
+
+
+                <div class="shopping-menu-text" *ngFor = "let cat of category">
                   <a href="#" class="link-menu-katalog">
                     <span class="shop-left-icons">
                         <mdb-icon fas icon="tablets"></mdb-icon>
                       <!-- <img src="assets/website/img/medical-icons/hospital.png" alt=""> -->
-                    </span> 
-                    <span class="shoping-menu-text-about">{{'SIDENAV.Dorilar' | translate}}</span>
+                    </span>
+                    <span class="shoping-menu-text-about" >{{cat.name}}</span>
                     <span class="shop-right-icons "><i class="fa fa-angle-right"></i></span>
                   </a>
                   <div class="catalog-activ">
@@ -60,44 +63,16 @@
                         <div class="col-4 border-right-menu">
                           <div class="wrap-shopping-menu">
                             <div class="shopping-menu">
-                              <div class="shopping-menu-text ">
-                                <a href="#" class="catalog-link-drop"  >Hammasini ko'rish</a>
-                              </div>						
-                              <div class="shopping-menu-text">
-                                <a href="#" class="catalog-link-drop" >Suyak-mushak tizimi</a>
-                              </div>								
-                              <div class="shopping-menu-text">
-                                <a href="#" class="catalog-link-drop" >Shamollashga qarshi dori</a>
-                              </div>								
-                              <div class="shopping-menu-text">
-                                <a href="#" class="catalog-link-drop" >Xazm qilish tizimi</a>
-                              </div>								
-                              <div class="shopping-menu-text">
-                                <a href="#" class="catalog-link-drop" >Qon-tomir sistemasi</a>
-                              </div>								
-                              <div class="shopping-menu-text">
-                                <a href="#" class="catalog-link-drop" >Nerv sistemasi</a>
+                              <div *ngFor = "let podcat of podcategory"   class="shopping-menu-text ">
+                                <a href="#" class="catalog-link-drop" *ngIf = "cat._id == podcat.category_id">{{podcat.name}}</a>
                               </div>
-                              <div class="shopping-menu-text">
-                                <a href="#" class="catalog-link-drop" >Siydik-tanosil tizimi</a>
-                              </div>
-                              <div class="shopping-menu-text">
-                                <a href="#" class="catalog-link-drop" >Teri kasalliklari</a>
-                              </div>
-                              <div class="shopping-menu-text">
-                                <a href="#" class="catalog-link-drop" >Nafas olish sistemasi</a>
-                              </div>
-                              <div class="shopping-menu-text">
-                                <a href="#" class="catalog-link-drop" >Sezgi organlari</a>
-                              </div>
-                              <div class="shopping-menu-text">
-                                <a href="#" class="catalog-link-drop" >Bolalar aptechkasi</a>
-                              </div>	
                             </div>
                           </div>
                         </div>
                         <div class="col-8">
                           <div class="row no-gutters">
+
+
                             <div class=" col-lg-6" >
                               <div class="drug-product ">
                                 <div class="drug-product-about">
@@ -122,8 +97,11 @@
                                     </div>
                                   </div>
                                 </div>
-                              </div>				
+                              </div>
                             </div>
+
+
+
                             <div class=" col-lg-6" >
                               <div class="drug-product ">
                                 <div class="drug-product-about">
@@ -148,20 +126,23 @@
                                     </div>
                                   </div>
                                 </div>
-                              </div>				
-                            </div>																
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>							
+                </div>
+
+
+
                 <div class="shopping-menu-text">
                   <a href="#" class="link-menu-katalog">
                     <span class="shop-left-icons">
-                        <mdb-icon fas icon="baby"></mdb-icon>  
+                        <mdb-icon fas icon="baby"></mdb-icon>
                       <!-- <img src="assets/website/img/medical-icons/enema.png" alt=""> -->
-                    </span> 
+                    </span>
                     <span class="shoping-menu-text-about">{{'SIDENAV.ONA-BOLA' | translate}}</span>
                     <span class="shop-right-icons "><i class="fa fa-angle-right"></i></span>
                   </a>
@@ -173,22 +154,22 @@
                             <div class="shopping-menu">
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Hammasini ko'rish</a>
-                              </div>							
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Bolalarni parvarishlash</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Bolalar ozuqalari</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Bolarni cho'miltirish</a>
-                              </div>									
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Bolalar gigienasi</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Tagliklar</a>
-                              </div>	
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -218,7 +199,7 @@
                                     </div>
                                   </div>
                                 </div>
-                              </div>				
+                              </div>
                             </div>
                             <div class=" col-lg-6" >
                               <div class="drug-product ">
@@ -244,14 +225,14 @@
                                     </div>
                                   </div>
                                 </div>
-                              </div>				
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>										
-                </div>								
+                  </div>
+                </div>
                 <div class="shopping-menu-text">
                   <a href="#" class="link-menu-katalog">
                     <span class="shop-left-icons">
@@ -269,32 +250,32 @@
                             <div class="shopping-menu">
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Hammasini ko'rish</a>
-                              </div>						
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Ingalyatorlar</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Zondlar</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Tonometrlar</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Ortopediya maxsulotlari</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Qoplamalar</a>
-                              </div>	
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Katetrlar</a>
                                 <a href="#" class="catalog-link-drop"  >Hammasini ko'rish</a>
-                              </div>	
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Dializatorlar</a>
-                              </div>	
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Termometrlar</a>
-                              </div>	
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -325,7 +306,7 @@
                                     </div>
                                   </div>
                                 </div>
-                              </div>				
+                              </div>
                             </div>
                             <div class=" col-lg-6" >
                               <div class="drug-product ">
@@ -351,14 +332,14 @@
                                     </div>
                                   </div>
                                 </div>
-                              </div>				
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>								
+                </div>
                 <div class="shopping-menu-text">
                   <a href="#" class="link-menu-katalog">
                     <span class="shop-left-icons">
@@ -376,16 +357,16 @@
                             <div class="shopping-menu">
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Hammasini ko'rish</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Dietalar</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Enteral ovqatlanish</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Davolovchi ozuqalar</a>
-                              </div>									
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -415,7 +396,7 @@
                                     </div>
                                   </div>
                                 </div>
-                              </div>				
+                              </div>
                             </div>
                             <div class=" col-lg-6 " >
                               <div class="drug-product ">
@@ -441,14 +422,14 @@
                                     </div>
                                   </div>
                                 </div>
-                              </div>				
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>								
+                </div>
                 <div class="shopping-menu-text">
                   <a href="#" class="link-menu-katalog">
                     <span class="shop-left-icons">
@@ -466,16 +447,16 @@
                             <div class="shopping-menu">
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Hammasini ko'rish</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Sog'likni parvarishlash</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Yuz terisini parvarishlash</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Qomatni parvarishlash</a>
-                              </div>								
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -505,7 +486,7 @@
                                     </div>
                                   </div>
                                 </div>
-                              </div>				
+                              </div>
                             </div>
                             <div class=" col-lg-6" >
                               <div class="drug-product ">
@@ -531,14 +512,14 @@
                                     </div>
                                   </div>
                                 </div>
-                              </div>				
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>								
+                </div>
                 <div class="shopping-menu-text">
                   <a href="#" class="link-menu-katalog">
                     <span class="shop-left-icons">
@@ -556,16 +537,16 @@
                             <div class="shopping-menu">
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Hammasini ko'rish</a>
-                              </div>							
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Giyoxlar</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Davolovchi moyl</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Choylar</a>
-                              </div>								
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -595,7 +576,7 @@
                                     </div>
                                   </div>
                                 </div>
-                              </div>				
+                              </div>
                             </div>
                             <div class=" col-lg-6 " >
                               <div class="drug-product ">
@@ -621,14 +602,14 @@
                                     </div>
                                   </div>
                                 </div>
-                              </div>				
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>	
+                </div>
 
                 <div class="shopping-menu-text">
                   <a href="#" class="link-menu-katalog">
@@ -647,22 +628,22 @@
                             <div class="shopping-menu">
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Hammasini ko'rish</a>
-                              </div>							
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Og'izni parvarishlash</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Ayollar gigienasi</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Dorilar katalogi</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Terlashga qarshi vositalarh</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Kattalar uchun taglikla</a>
-                              </div>	
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -692,7 +673,7 @@
                                     </div>
                                   </div>
                                 </div>
-                              </div>				
+                              </div>
                             </div>
                             <div class=" col-lg-6 " >
                               <div class="drug-product ">
@@ -718,14 +699,14 @@
                                     </div>
                                   </div>
                                 </div>
-                              </div>				
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>															
+                </div>
                 <div class="shopping-menu-text">
                   <a href="#" class="link-menu-katalog">
                     <span class="shop-left-icons">
@@ -743,21 +724,21 @@
                             <div class="shopping-menu">
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Hammasini ko'rish</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Hammasini ko'rish</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Hammasini ko'rish</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Hammasini ko'rish</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
                                 <a href="#" class="catalog-link-drop"  >Hammasini ko'rish</a>
-                              </div>								
+                              </div>
                               <div class="shopping-menu-text">
-                                <a href="#" class="catalog-link-drop"  >Hammasini ko'rish</a>																</div>	
+                                <a href="#" class="catalog-link-drop"  >Hammasini ko'rish</a>																</div>
                             </div>
                           </div>
                         </div>
@@ -787,7 +768,7 @@
                                     </div>
                                   </div>
                                 </div>
-                              </div>				
+                              </div>
                             </div>
                             <div class=" col-lg-6 " >
                               <div class="drug-product ">
@@ -813,14 +794,14 @@
                                     </div>
                                   </div>
                                 </div>
-                              </div>				
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>								
+                </div>
               </div>
             </div>
           </div>
@@ -859,7 +840,7 @@
                 <div data-aos="fade-right">
                   <img  src="assets/website/img/reklama-1.png" alt="" class="img-fluid"  style="height: 260px;" >
                 </div>
-                <div>	
+                <div>
                   <img src="assets/website/img/reklama-2.png" class="img-fluid" style="height: 262px;">
                 </div>
               </div>
@@ -869,8 +850,8 @@
       </div>
     </div>
   </section><!-- wrap-shopping-body -->
-  
-  
+
+
   <app-best-offer></app-best-offer>
   <app-with-sale></app-with-sale>
   <app-import-pharm></app-import-pharm>

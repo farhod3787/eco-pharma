@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { CategoryService } from 'src/app/shared/services/category';
+import { PodCategoryService } from 'src/app/shared/services/podcategory';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,10 +10,17 @@ import { NavbarComponent } from '../navbar/navbar.component';
 })
 export class HomeComponent implements OnInit {
 
+  category = []
+  podcategory = []
+
   constructor(
-    public translate: TranslateService
-  ) { 
-        
+    public translate: TranslateService,
+    private podcategoryService : PodCategoryService,
+    private categoryService: CategoryService
+  ) {
+    this.podgetCategory();
+    this.getcategory()
+
     translate.addLangs(['en', 'ru', 'uz']);
     translate.setDefaultLang('ru');
 
@@ -20,6 +29,17 @@ export class HomeComponent implements OnInit {
     translate.getLangs();
   }
 
+  getcategory() {
+    this.categoryService.get().subscribe( res =>{
+      this.category = res.json()
+    })
+  }
+
+  podgetCategory() {
+    this.podcategoryService.get().subscribe( res =>{
+        this.podcategory = res.json()
+      })
+  }
   ngOnInit() {
   }
 

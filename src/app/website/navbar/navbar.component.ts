@@ -51,7 +51,7 @@ export class NavbarComponent implements OnInit {
       number: new FormControl(null, {
               validators: [Validators.required]
       }),
-      logo: new FormControl(null, { validators: [Validators.required] })
+      image: new FormControl(null, { validators: [Validators.required] })
     }
   )
 
@@ -94,23 +94,15 @@ export class NavbarComponent implements OnInit {
     })
   }
 
-
-  onSave() {
-    this.resteptService.post(
-      this.form.value.number,
-      this.form.value.logo
-    )
-    .subscribe( res =>{
-          if(res) {
-            alert("AA")
-          }
-          else {
-            alert("BB")
-          }
-      this.form.reset();
-
-      })
+  retsept() {
+    this.resteptService.post(this.form.value.number, this.form.value.image).subscribe( res => {
+      if (res) {
+        alert("AAA")
+      }
+      else { alert("BB")}
+    })
   }
+
 
 
 

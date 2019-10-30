@@ -43,6 +43,8 @@ export class AdminRetseptComponent implements OnInit {
       else {
         alert("Error")
       }
+      this.get()
+
     })
   }
 
