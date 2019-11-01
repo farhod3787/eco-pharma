@@ -50,6 +50,10 @@ module.exports.BUTTONS = {
     edit_lng: {
         text: "name10",
         'callback_data': 'edit_lng'
+    },
+    recipe: {
+        text: "name11",
+        'callback_data': 'recipe'
     }
 
 }

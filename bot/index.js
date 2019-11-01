@@ -210,7 +210,9 @@ bot.on('callback_query', (result) => {
                     [{ text: Language[thisLan].button.name4, 'callback_data': 'bucket' },
                         { text: Language[thisLan].button.name9, 'callback_data': 'about' }
                     ],
-                    [{ text: Language[thisLan].button.name10, 'callback_data': 'edit_lng' }]
+                    [{ text: Language[thisLan].button.name10, 'callback_data': 'edit_lng' }],
+                    [{ text: Language[thisLan].button.name11, 'callback_data': 'recipe' }]
+
                     // [BUTTONS.find],
                     // [BUTTONS.bucket]
                 ],
@@ -491,6 +493,15 @@ bot.on('callback_query', (result) => {
             }
         })
 
+    } else if (result.data.includes('recipe')) {
+
+        langUsers[userLanIndex].lan = result.data.split(' ')[1];
+
+        thisLan = langUsers[userLanIndex].lan;
+
+        bot.deleteMessage(chatId, result.message.message_id);
+
+        bot.sendMessage(chatId, "Reseptni extiyot bop tashen )")
     } else {
         // console.log("BBBBBBBBBBBBBBBBBBBBBBB");
 
