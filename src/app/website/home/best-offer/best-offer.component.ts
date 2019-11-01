@@ -4,7 +4,7 @@ import { BasketService } from 'src/app/shared/services/basket-service';
 import Swal from 'sweetalert2'
 import { ComparisonService } from 'src/app/shared/services/comparison-service';
 
-import { Router } from '@angular/router' 
+import { Router } from '@angular/router'
 import { NavbarComponent } from '../../navbar/navbar.component';
 @Component({
   selector: 'app-best-offer',
@@ -14,9 +14,10 @@ import { NavbarComponent } from '../../navbar/navbar.component';
 export class BestOfferComponent implements OnInit {
 
   pharms =[];
+
   i=0;
   rate= false ;
-  constructor( 
+  constructor(
     private pharmService: PharmsServices,
     private basketService: BasketService,
     private comparisonService: ComparisonService,
@@ -27,11 +28,13 @@ export class BestOfferComponent implements OnInit {
    }
 
    get() {
-     this.pharmService.get().subscribe( res =>{
+     this.pharmService.getCat1().subscribe( res =>{
         this.pharms = res.json();
         console.log(this.pharms)
+    });
 
-    })
+
+
    }
 
    addBasket(number) {

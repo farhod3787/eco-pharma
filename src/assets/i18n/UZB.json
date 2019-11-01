@@ -1,6 +1,6 @@
 ﻿
 {
-  "NAVBAR": 
+  "NAVBAR":
   {
    "LOGOUT" : "Chiqish",
    "SIGN" : "Kirish",
@@ -26,19 +26,19 @@
   "GIYOHLAR": "Giyohlar va o'tlar",
   "GIGIYENA": "Gigiyena vositalari",
   "KATALOG": "Dorilar katalogi"
-}, 
-"HOME" : 
+},
+"HOME" :
 {
   "SONI": "so'm  1 dona",
   "BUTTON": "Savatga qo'shish",
   "NOL": "Sotuvda qolmadi",
-  "TITLE": "Eng yaxshi takliflar",
+  "TITLE": "Kategoriya nomi",
   "OLD": "Hammasi"
 }
 
 
-  
- 
+
+
 
 
 }

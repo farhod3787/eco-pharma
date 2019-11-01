@@ -1,0 +1,49 @@
+<div class="row" >
+  <div class="col-lg-4 col-md-4 col-sm-6 "   *ngFor="let pharm of pharms">
+
+
+      <div class="drug-product ">
+        <div class="wrap-new-action-now" *ngIf = "pharm.sale != 0">
+          <span >{{pharm.sale}}%</span>
+        </div>
+        <div class="finished-icon" *ngIf="pharm.rate === 0">
+            <!-- <div class="wrap-new-action"><span>AND</span></div>  -->
+          <div class="finished-icon-text"> Sotuvda qolmadi !</div>
+
+        </div>
+
+        <div routerLink="/about-pharm/{{pharm._id}}" class="drug-product-about">
+
+          <div class="product-img">
+            <img src="http://localhost:5000/images/{{pharm.logo}}" alt="" class="img-fluid">
+          </div>
+
+          <div class="drud-name pt-2 ">{{pharm.name}}</div>
+          <div class="drug-text-about">GM Pharmaceuticals Ltd , Грузия</div>
+          <div class="drug-product-cost"><span>{{pharm.price}} </span>so'm-1 dona</div>
+        </div>
+
+
+        <div class="drug-product-shopping">
+          <div class="row no-gutters">
+            <div class="col-9">
+              <div class="drug-product-buy">
+                <button ><span class="fa fa-shopping-cart"></span> Savatga
+                  qo'shish</button>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="drug-product-buy">
+                <button>
+                  <mdb-icon fas icon="angle-double-right"></mdb-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+    </div>
+
+</div>

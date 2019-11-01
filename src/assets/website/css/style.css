@@ -74,7 +74,7 @@ header{
 	position: relative;
 
 }
-/* Scrollbar Style */ 
+/* Scrollbar Style */
 #style-1::-webkit-scrollbar-track
 {
 	border-radius: 2px;
@@ -95,7 +95,7 @@ header{
 	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
 	background-color:#04B847;
 }
-/* Scrollbar End */ 
+/* Scrollbar End */
 
 .modal input {
 	-webkit-writing-mode: horizontal-tb !important;
@@ -241,14 +241,14 @@ header{
 .header-logo-tem{
 	background-color: #fff;
 	border-top: 1px solid #EFECEC;
-	border-bottom: 1px solid #DCD9D9; 
+	border-bottom: 1px solid #DCD9D9;
 }
 .wrapper-head{
 	background-color: #FAFAFA;
 	overflow: hidden;
 	padding-top: 5px;
 }
- 
+
 .header-logo-tem{
 	padding: 15px 40px;
 }
@@ -318,10 +318,10 @@ header{
 	transition: background-color .25s ease-out,color .25s ease-out;
 }
 .instagram-icons{
-	background-image: linear-gradient(to right top, #FFD120 ,#ED0015, #B500AB); 
+	background-image: linear-gradient(to right top, #FFD120 ,#ED0015, #B500AB);
 }
 .instagram-icons:hover{
-	background-image: linear-gradient(to right top, #FFD120 , #B500AB); 
+	background-image: linear-gradient(to right top, #FFD120 , #B500AB);
 	-webkit-transition: background-color .25s ease-out,color .25s ease-out;
 	-moz-transition: background-color .25s ease-out,color .25s ease-out;
 	-o-transition: background-color .25s ease-out,color .25s ease-out;
@@ -471,7 +471,7 @@ header{
 .wrap-shopping-tem{
 	background-color: #fff;
 	border: 1px solid #EFECEC;
-	border-radius: 4px; 
+	border-radius: 4px;
 	width: 100%;
 	position: relative;
 }
@@ -531,8 +531,8 @@ header{
 .catalog-activ{
 	display: none;
 	overflow: hidden;
-	width: 750px;
-	max-width: 750px;
+	width: 300px;
+	/* max-width: 750px; */
 	height: auto;
 	-webkit-box-shadow: 4px 2px 14px -4px rgba(0,0,0,0.62);
 	-moz-box-shadow: 4px 2px 14px -4px rgba(0,0,0,0.62);
@@ -570,8 +570,8 @@ header{
 	.shopping-menu-product-cat{
 		padding: 20px 20px 20px 0;
 		border-left: 10px solid #EBF4EF;
-		width: 750px;
-		max-width: 750px;
+		width: 300px;
+		/* max-width: 750px; */
 		height: auto;
 		overflow: hidden;
 	}
@@ -586,7 +586,7 @@ header{
 		-moz-transition: background-color .25s ease-out,color .25s ease-out;
 		-o-transition: background-color .25s ease-out,color .25s ease-out;
 		transition: background-color .25s ease-out,color .25s ease-out;
-		background-color: #04B847; 
+		background-color: #04B847;
 	}
 	.catalog-link-drop{
 		text-overflow: ellipsis;
@@ -606,12 +606,12 @@ header{
 	}
 	.shopping-menu-text:hover {
 		color: #fff;
-		background-color:#04B847; 
+		background-color:#04B847;
 		transition: background-color .25s ease-out,color .25s ease-out;
 	}
 	.shopping-menu-text:hover .link-menu-katalog{
 		color: #fff;
-		background-color:#04B847; 
+		background-color:#04B847;
 		transition: background-color .25s ease-out,color .25s ease-out;
 	}
 	.shopping-menu-text:hover > .catalog-activ{
@@ -758,7 +758,7 @@ header{
 
 	}
 	.drud-name , .drug-text-about{
-		width: 100%;	
+		width: 100%;
 		text-overflow: ellipsis;
 		overflow: hidden;
 		white-space: nowrap;
@@ -769,7 +769,7 @@ header{
 	}
 	.drug-product-shopping{
 		/* border:1px solid transparent; */
-		text-align: center;	
+		text-align: center;
 		font-size: 18px;
 		cursor: pointer;
 		color: #fff;
@@ -789,12 +789,12 @@ header{
 	.product-buy-border {
 		width: 100%;
 		padding: 5px;
-	
+
 	}
 	.product-buy-border button {
 		color:  #04B847;
 		font-size: 15px;
-	
+
 	}
 	.product-buy-border:hover{
 		background-color: #04B847;
@@ -811,7 +811,7 @@ header{
 		color: #04B847;
 		width: 100%;
 		padding:8px 5px;
-		border:1px solid #04B847;	
+		border:1px solid #04B847;
 	}
 
 	.drug-product-buy button:hover{
@@ -855,21 +855,21 @@ header{
 	}
 	.ws_image-div{
 		position: absolute;
-		top: 0px; 
+		top: 0px;
 		left: 0px;
 		right: 0px;
 		bottom: 0px;
 		overflow: hidden;
 	}
 	.ws_list{
-		position: absolute; 
+		position: absolute;
 		top: 0px;
 		height: 100%;
 		-webkit-transform: translate3d(0px, 0px, 0px);
 		-moz-transform: translate3d(0px, 0px, 0px);
 		-o-transform: translate3d(0px, 0px, 0px);
 		transform: translate3d(0px, 0px, 0px);
-		width: 100%; 
+		width: 100%;
 		left: -100%;
 		-webkit-transition: all 0ms ease 0s;
 		-o-transition: all 0ms ease 0s;
@@ -890,7 +890,7 @@ header{
 		display: none!important;
 	}
 	.brend-about-icons{
-		width: 100%;   
+		width: 100%;
 /*		-webkit-box-shadow: 0 1px 6px rgba(57,73,76,.35);
 		-moz-box-shadow: 0 1px 6px rgba(57,73,76,.35);
 		-o-box-shadow: 0 1px 6px rgba(57,73,76,.35);
@@ -975,7 +975,7 @@ header{
 	}
 	.drug-list-catalog a:hover{
 		background-color:#FAFAFA;
-		color: #616161; 
+		color: #616161;
 		-webkit-transition: background-color .25s ease-out,color .25s ease-out;
 		-moz-transition: background-color .25s ease-out,color .25s ease-out;
 		-o-transition: background-color .25s ease-out,color .25s ease-out;
@@ -1033,7 +1033,7 @@ header{
 	}
 	.drug-about-butto-left{
 		outline: none;
-		border: none; 
+		border: none;
 		background-color: #00A13C;
 		color: #fff;
 		border-radius: 4px 0 0 4px;
@@ -1046,7 +1046,7 @@ header{
 	}
 	.drug-about-butto-right{
 		outline: none;
-		border: none; 
+		border: none;
 		background-color: #00A13C;
 		color: #fff;
 		border-radius:0 4px 4px 0;
@@ -1075,7 +1075,7 @@ header{
 	box-shadow: 0 0 15px 2px rgba(0,0,0,0.1);
 	-webkit-box-shadow: 0 0 15px 2px rgba(0,0,0,0.1);
 	-moz-box-shadow: 0 0 15px 2px rgba(0,0,0,0.1);
-	-o-box-shadow: 0 0 15px 2px rgba(0,0,0,0.1) 
+	-o-box-shadow: 0 0 15px 2px rgba(0,0,0,0.1)
 }
 	.shop-card-title{
 		position: fixed;
@@ -1097,7 +1097,7 @@ header{
 		padding: 10px;
 		background-color: #F5F5F5;
 	}
-	 
+
 	.shoppingcard-product{
 		height: auto;
 		margin-top: 65px;

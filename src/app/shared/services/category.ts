@@ -13,6 +13,9 @@ import { Http } from '@angular/http';
     // url = "/api/categories";
     // url = "https://eco-pharmacy.herokuapp.com/api/categories"
 
+    getOne(id) {
+      return this.http.get(this.url + '/getCategory/' + id)
+    }
 
     get() {
         return this.http.get(this.url + '/get');

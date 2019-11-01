@@ -73,6 +73,15 @@ router.get('/getfile', function(req, res) {
 });
 
 
+router.get('/getCat/:name', (request, response) =>{
+   var name = request.params.name;
+   Pharmacy.find({roomy: name}).then( res =>{
+     response.status(200).json(res)
+   }).catch( err =>{
+      response.status(400).json(err)
+})
+})
+
 router.get('/getall', async(request, response, next) => {
 
     let pharms = await Pharmacy.find();
@@ -94,7 +103,7 @@ router.get('/getall', async(request, response, next) => {
 
 })
 
-router.get('/getsale', async function(request, response) {
+router.get('/getCat2', async function(request, response) {
 
     // Pharmacy.find({sale: 0}).toArray( (result) =>{
     //     console.log(result);
@@ -103,7 +112,7 @@ router.get('/getsale', async function(request, response) {
 
     var pharms = [];
     var q = 0;
-    Pharmacy.find().then(all => {
+    Pharmacy.find({roomy: 'Testing updated'}).then(all => {
         for (let i = all.length - 1; i >= 0; i--) {
             if (all[i].sale !== 0) {
                 q++;
@@ -119,10 +128,10 @@ router.get('/getsale', async function(request, response) {
     })
 })
 
-router.get('/get5', async function(request, response) {
+router.get('/getCat1', async function(request, response) {
     var pharms = [];
     var q = 0;
-    Pharmacy.find().then(all => {
+    Pharmacy.find({roomy: 'New Category'}).then(all => {
         for (let i = all.length - 1; i >= 0; i--) {
             q++;
             pharms.push(all[i]);
