@@ -13,8 +13,13 @@ import { Http } from '@angular/http';
   // url = "/api/pharm";
     // url = "https://eco-pharmacy.herokuapp.com/api/pharm"
 
+
     get() {
       return this.http.get(this.url + '/getall');
+    }
+
+    getCat(cat_name) {
+        return  this.http.get(this.url + '/getCat/' + cat_name)
     }
 
     post(
@@ -57,12 +62,12 @@ import { Http } from '@angular/http';
         return this.http.get(this.url + '/getpharm/' + id);
     }
 
-    getPharm5() {
-      return this.http.get(this.url + '/get5');
+    getCat1() {
+      return this.http.get(this.url + '/getCat1');
     }
 
-    getsale() {
-        return this.http.get(this.url + '/getsale');
+    getCat2() {
+        return this.http.get(this.url + '/getCat2');
 
     }
 

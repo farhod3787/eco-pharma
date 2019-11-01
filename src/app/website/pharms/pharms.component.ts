@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PharmsServices } from 'src/app/shared/services/pharms'
 import { BasketService } from 'src/app/shared/services/basket-service';
 import Swal from 'sweetalert2'
+import { CategoryService } from 'src/app/shared/services/category';
 @Component({
   selector: 'app-pharms',
   templateUrl: './pharms.component.html',
@@ -9,32 +10,41 @@ import Swal from 'sweetalert2'
 })
 export class PharmsComponent implements OnInit {
 
-
+  categorys =[]
   pharms =[]
 
+  categoryName : string
   i=0;
   b : any
+
 
   constructor(
 
     private pharmService: PharmsServices,
-    private basketService: BasketService
+    private basketService: BasketService,
+    private categoryService: CategoryService
 
-  ) { 
-      this.get()
+  ) {
+      this.get();
+      this.getCategorys()
   }
 
-
+  catName(name) {
+      this.categoryName = name;
+  }
+  getCategorys() {
+    this.categoryService.get().subscribe( res =>{
+      this.categorys = res.json()
+    })
+  }
   get() {
     this.pharmService.get().subscribe( res =>{
        this.pharms = res.json();
-       
-
    })
   }
 
   addBasket(number) {
-   
+
     this.i = this.basketService.i;
       this.basketService.object[this.i] = number;
       console.log(this.basketService.object[this.i]);

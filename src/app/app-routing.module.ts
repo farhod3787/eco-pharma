@@ -34,6 +34,7 @@ import { ComparisonComponent } from './website/comparison/comparison.component';
 import { AdminPodCategoryComponent } from './admin/admin-pod-category/admin-pod-category.component';
 import { AdminRetseptComponent } from './admin/admin-retsept/admin-retsept.component';
 import { AdminRetseptTrueComponent } from './admin/admin-retsept-true/admin-retsept-true.component';
+import { CatPharmsComponent } from './website/cat-pharms/cat-pharms.component';
 
 
 
@@ -73,13 +74,16 @@ const routes: Routes = [
           { path : 'my-should', component: MyShouldComponent},
           { path : 'my-orders', component: MyOrdersComponent}
         ]},
-        { path: 'pharms', component: PharmsComponent},
+        { path: 'pharms', component: PharmsComponent, children : [
+          { path: 'category/:id', component: CatPharmsComponent}
+        ]},
         { path: 'about-pharm/:id', component: AboutPharmsComponent},
         { path: 'basket', component: BasketComponent},
         { path: 'warranty', component: WarrantyComponent},
         { path: 'order-pharm', component: OrderPharmComponent},
         { path: 'search/:name', component: SearchComponent},
         { path: 'comparison', component : ComparisonComponent}
+
 
         ]
     },

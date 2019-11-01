@@ -65,6 +65,7 @@ import { ComparisonComponent } from './website/comparison/comparison.component';
 import { AdminPodCategoryComponent } from './admin/admin-pod-category/admin-pod-category.component';
 import { AdminRetseptComponent } from './admin/admin-retsept/admin-retsept.component';
 import { AdminRetseptTrueComponent } from './admin/admin-retsept-true/admin-retsept-true.component';
+import { CatPharmsComponent } from './website/cat-pharms/cat-pharms.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -112,7 +113,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     LanguageComponent,
     OrderPharmComponent,
     SearchComponent,
-    ComparisonComponent
+    ComparisonComponent,
+    CatPharmsComponent
   ],
 
   imports: [

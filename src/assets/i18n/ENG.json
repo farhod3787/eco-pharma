@@ -1,6 +1,6 @@
 ﻿
 {
-  "NAVBAR": 
+  "NAVBAR":
   {
    "LOGOUT" : "Log Out",
    "SIGN" : "Sign",
@@ -27,18 +27,18 @@
   "GIGIYENA": "Hygiene products",
   "KATALOG": "Catalog of drugs"
 },
-"HOME" : 
+"HOME" :
 {
   "SONI": "sum  1 pc",
   "BUTTON": "Add to cart",
   "NOL": "Not for sale",
-  "TITLE" : "Best Offers",
+  "TITLE" : "Category name",
   "OLD": "Everything"
 }
 
 
-  
- 
+
+
 
 
 }
