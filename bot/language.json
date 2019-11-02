@@ -26,7 +26,8 @@
             "name10": "❌ Bunday dori bizda mavjud emas",
             "name11": "⛔️Bu dori bizda qolmadi",
             "name12": "Tugadi",
-            "name13": "\tVrach tavsiya qilgan retseptni rasmini bizga jo'nating( .jpg farmatda ). \nBoshqa tipdagi fayllar inobatga olinmaydi"
+            "name13": "\tVrach tavsiya qilgan retseptni rasmini bizga jo'nating( .jpg farmatda ). \nBoshqa tipdagi fayllar inobatga olinmaydi",
+            "name14": "Retsepingiz Admin ga jo'natildi va u tez orada ko'rib chiqiladi, iltimos admin siz bilan bog'lanishini kuting."
         }
     },
     "ru": {
@@ -56,7 +57,8 @@
             "name10": "❌ У нас нет такого препарата",
             "name11": "⛔️У нас не было этого препарата",
             "name12": "Закончено",
-            "name13": "\tОтправьте нам фотографию рецепта вашего врача (файл .jpg). \nДругие типы файлов игнорируются"
+            "name13": "\tОтправьте нам фотографию рецепта вашего врача (файл .jpg). \nДругие типы файлов игнорируются",
+            "name14": "Ваш рецепт был отправлен администратору и скоро будет рассмотрен, пожалуйста, подождите, пока администратор свяжется с вами."
         }
     }
 }
