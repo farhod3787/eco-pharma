@@ -18,12 +18,7 @@ export class WithSaleComponent implements OnInit {
     ) {
     // this.get();
    }
-
-   get() {
-     this.pharmService.getsale().subscribe( res =>{
-        this.pharms = res.json();
-     })
-   }
+ 
   ngOnInit() {
   }
 
