@@ -16,7 +16,7 @@ const checkedPharms = [];
 const langUsers = [];
 
 // for information
-const WEB_SITE = "https://eco-pharmacy.herokuapp.com/"
+const WEB_SITE = "https://eco-pharmacy.herokuapp.com"
 const Global = 'https://eco-pharmacy.herokuapp.com/api/bot/some_token'
 const Local = "http://localhost:5000/api/bot/some_token"
 
