@@ -17,6 +17,7 @@ const langUsers = [];
 
 // for information
 const WEB_SITE = "https://eco-pharmacy.herokuapp.com"
+const Locall = "http://localhost:5000";
 const Global = 'https://eco-pharmacy.herokuapp.com/api/bot/some_token'
 const Local = "http://localhost:5000/api/bot/some_token"
 
@@ -615,7 +616,7 @@ bot.on('message', (msg) => {
                     image: request(photoURL)
                 };
                 request.post({
-                    url: WEB_SITE + '/retsept/create',
+                    url: WEB_SITE + '/api/retsept/create',
                     formData: formData
                 }, async(err, res, body) => {
                     if (err) { console.log(err); return; }
