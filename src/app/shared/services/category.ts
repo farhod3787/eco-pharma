@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+
+
+import {environment} from './../../../environments/environment';
+
 @Injectable({
     providedIn: 'root'
   })
@@ -9,7 +13,8 @@ import { Http } from '@angular/http';
 
     }
 
-    url = "http://localhost:5000/api/categories";
+  url = environment.url + '/api/categories';
+    // url = "http://localhost:5000";
     // url = "/api/categories";
     // url = "https://eco-pharmacy.herokuapp.com/api/categories"
 
