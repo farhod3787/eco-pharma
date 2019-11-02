@@ -10,11 +10,10 @@
             <div class="col-product " *ngFor="let pharm of pharms">
                 <div class="drug-product ">
 
-                    <div class="finished-icon" *ngIf="pharm.rate === 0">
-                        <!-- <div class="wrap-new-action"><span>AND</span></div>  -->
+                    <!-- <div class="finished-icon" *ngIf="pharm.rate === 0">
+                        <div class="wrap-new-action"><span>AND</span></div>
                         <div class="finished-icon-text">{{'HOME.NOL' | translate}}</div>
-
-                    </div>
+                    </div> -->
 
                     <div routerLink="/about-pharm/{{pharm._id}}" class="drug-product-about">
 

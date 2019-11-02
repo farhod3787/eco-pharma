@@ -10,7 +10,7 @@
 
           <div class="form-row">
             <div class="col-md-6 mb-3">
-              <input *ngIf="!data" type="text" #number (change)="food = number.value" class="form-control is-valid"  
+              <input *ngIf="!data" type="text" #number (change)="food = number.value" class="form-control is-valid"
                 placeholder="+998 (__) (___-__-__)" prefix="+998 " mask="(00) 000 00 00"required>
               <input *ngIf="data" type="text" class="form-control is-valid" id="validationServer01"
                 placeholder="{{person[0].number}}" required>
@@ -21,9 +21,9 @@
             <div class="col-md-6 mb-3">
               <div *ngIf="activ"><input  type="number" #kod class="form-control is-valid" id="validationServer01"
                 placeholder="Enter kod" required><br><button (click)="registUser(food, kod.value)" class="btn btn-success">Enter</button></div>
-                
+
               <button *ngIf="!data && !activ" (click)="verifynumber()" class="btn btn-success w-100">Aktivatsiya kodini olish</button>
-            
+
             </div>
           </div>
 
@@ -31,19 +31,19 @@
 
         <div class="profil-about">
           <div class="h5  py-2 text-uppercase">Bog'lanish uchun</div>
-         
+
             <div class="form-row">
               <div class="col-md-6 mb-3">
                 <label for="validationServer02">Ism va sharifingiz</label>
                 <input *ngIf="!data" type="text" #name (change)="foo = name.value" class="form-control "   placeholder="..."
                   required>
-                   
+
                 <input *ngIf="data" type="text" class="form-control is-valid" id="validationServer01"
                   placeholder="{{person[0].name}}" required>
-                
+
               </div>
-             
-             
+
+
               <!-- <div class="col-md-6 mb-3">
                 <label for="validationServer02">Familiyangiz</label>
                 <input *ngIf="!data" type="text" class="form-control is-valid" id="validationServer02" placeholder="..."
@@ -60,7 +60,7 @@
                   <input type="text" class="form-control is-valid" id="validationServer02" placeholder="sh.xoltorayev@gmail.com"  required>
                 </div>
               </div> -->
-           
+
         </div>
         <div class="profil-about">
           <div class="h5 py-2 text-uppercase">Yetkazib berish turi *</div>
@@ -135,8 +135,17 @@
 
 
         <div *ngIf="bol" class="profil-about panel">
-          <h3>Bizning manzil: Toshkent shahri, Chilonzor tumani. <br> Mo'ljal: Chilonzor metro <br> Telefon:; (71)
-            230-17-71</h3>
+          <h5>Bizning manzillarimiz:</h5>
+          <h6>Toshkent shahri, Mirobod tumani, Midobod ko'chasi 37-dom <br> Mo'ljal: Chilonzor metro <br> Telefon: (71)
+            230-17-71</h6> <hr>
+          <h6> Toshkent shahri, Shayhontohur tumani, Gulobod ko'chasi 54-dom<br> Mo'ljal: Chilonzor metro <br> Telefon: (71)
+            242-22-27</h6> <hr>
+            <h6>Toshkent shahri,Shayhontohur tumani, Bog'ko'cha, 26-dom <br> Mo'ljal: Chilonzor metro <br> Telefon: (71)
+              242-22-26</h6> <hr>
+              <h6>Toshkent shahri, Shayhontohur tumani, Uyg'ur ko'cha, 7-dom <br> Mo'ljal: Chilonzor metro <br> Telefon: (71)
+                242-42-45</h6> <hr>
+                <h6>Toshkent shahri, Forobiy ko'chasi 25 <br> Mo'ljal: TAShMI 2 ro'parasi <br> Telefon: (99)
+                  513-33-13</h6>
         </div>
 
 
@@ -211,7 +220,7 @@
 
                 <!-- <div class="pretty p-default p-round d-inline-block">
                       <input  type="radio" name="exampleRadios" id="exampleRadios111" value="option2">
-                    
+
                     <div class="state p-success-o">
                       <label><img src="assets/website/img/payme.svg" alt="" ></label>
                     </div>

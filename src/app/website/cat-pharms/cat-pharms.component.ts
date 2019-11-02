@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { CategoryService } from 'src/app/shared/services/category';
 import { PharmsServices } from 'src/app/shared/services/pharms';
+import { BasketService } from 'src/app/shared/services/basket-service';
+import Swal from 'sweetalert2'
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-cat-pharms',
@@ -14,12 +17,16 @@ export class CatPharmsComponent implements OnInit {
     public route: ActivatedRoute,
     private router : Router,
     private catService: CategoryService,
-    private pharmService: PharmsServices
+    private pharmService: PharmsServices,
+    private basketService: BasketService,
+    private navbarCom: NavbarComponent
   ) { }
 
    id: string;
     name: string;
     pharms = []
+    i=0;
+
   ngOnInit() {
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has("id")) {
@@ -33,7 +40,24 @@ export class CatPharmsComponent implements OnInit {
 
       }
     })
-
 }
+
+addBasket(number) {
+  this.i = this.basketService.i;
+  this.basketService.object[this.i] = number;
+  console.log(this.basketService.object[this.i]);
+ this.basketService.i++;
+  // this.i++;
+  Swal.fire({
+    type: 'success',
+    title: 'Maxsulot savatga qo\'shildi',
+    showConfirmButton: false,
+    timer: 1000
+  })
+
+  this.navbarCom.updateCount(1)
+}
+
+
 
 }

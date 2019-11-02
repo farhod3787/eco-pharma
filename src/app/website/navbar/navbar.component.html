@@ -6,7 +6,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content scrollbar " id="style-1" style="border-radius: 0;">
             <div class="modal-header text-center">
-                <a href="#" class="pl-5"><img src="assets/website/img/Новая папка (2)/logo_orign (3).png" alt="" style="width: 100px;" class=""></a>
+                <a routerLink='' class="pl-5"><img src="assets/website/img/Новая папка (2)/logo_orign (3).png" alt="" style="width: 100px;" class=""></a>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           </button>
             </div>
@@ -20,7 +20,11 @@
                             <span class="fa fa-map-marker"></span>
                             <a href="#">Bizning manzil</a>
                         </li>
-                        <li>
+                        <li *ngFor = "let category of categorys" routerLink="/pharms/category/{{category._id}}">
+                            <a class=" list-group-item-action">{{category.name}}</a>
+                            <span class="shop-right-icons "><i class="fa fa-angle-right"></i></span>
+                        </li>
+                        <!-- <li>
                             <a href="#">Dorilar katalogi</a>
                             <span class="shop-right-icons "><i class="fa fa-angle-right"></i></span>
                         </li>
@@ -39,11 +43,7 @@
                         <li>
                             <a href="#">Dorilar katalogi</a>
                             <span class="shop-right-icons "><i class="fa fa-angle-right"></i></span>
-                        </li>
-                        <li>
-                            <a href="#">Dorilar katalogi</a>
-                            <span class="shop-right-icons "><i class="fa fa-angle-right"></i></span>
-                        </li>
+                        </li> -->
                     </ul>
                     <ul class="menu bg-white">
                         <li>

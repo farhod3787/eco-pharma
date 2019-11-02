@@ -9,6 +9,7 @@ import { BasketService } from 'src/app/shared/services/basket-service';
 import Swal from 'sweetalert2'
 import { SearchService } from 'src/app/shared/services/search-service';
 import { RetseptService } from 'src/app/shared/services/retsept-service';
+import { CategoryService } from 'src/app/shared/services/category';
 
 declare var $: any;
 @Component({
@@ -22,6 +23,7 @@ export class NavbarComponent implements OnInit {
   data = false;
   pharms : Pharm;
   form: FormGroup;
+  categorys = []
     q=0;
   constructor(
     private pharmService: PharmsServices,
@@ -29,13 +31,20 @@ export class NavbarComponent implements OnInit {
     private router: Router,
     public basketservice: BasketService,
     private searchService: SearchService,
-    private resteptService: RetseptService
+    private resteptService: RetseptService,
+    private categoryService : CategoryService
     ) {
       this.a = basketservice.i;
+      this.getCategory()
 
 
     }
 
+    getCategory() {
+      this.categoryService.get().subscribe( res => {
+        this.categorys = res.json()
+      })
+    }
     updateCount(q){
       if(q == 0){
         this.a = 0

@@ -19,11 +19,7 @@ export class WithSaleComponent implements OnInit {
     // this.get();
    }
 
-   get() {
-     this.pharmService.getsale().subscribe( res =>{
-        this.pharms = res.json();
-     })
-   }
+
   ngOnInit() {
   }
 
@@ -48,7 +44,7 @@ export class WithSaleComponent implements OnInit {
     //   showConfirmButton: false,
     //   timer: 1400
     // });
-    
+
     // Toast.fire({
     //   type: 'success',
     //   title: name + '  Korzinkaga qo\'shildi'
