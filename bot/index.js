@@ -235,7 +235,8 @@ bot.on('callback_query', (result) => {
                         [{ text: Language[thisLan].button.name4, 'callback_data': 'bucket' },
                             { text: Language[thisLan].button.name9, 'callback_data': 'about' }
                         ],
-                        [{ text: Language[thisLan].button.name10, 'callback_data': 'edit_lng' }]
+                        [{ text: Language[thisLan].button.name10, 'callback_data': 'edit_lng' }],
+                        [{ text: Language[thisLan].button.name11, 'callback_data': 'recipe' }]
 
                     ]
                 }
@@ -294,7 +295,8 @@ bot.on('callback_query', (result) => {
                     [{ text: Language[thisLan].button.name4, 'callback_data': 'bucket' },
                         { text: Language[thisLan].button.name9, 'callback_data': 'about' }
                     ],
-                    [{ text: Language[thisLan].button.name10, 'callback_data': 'edit_lng' }]
+                    [{ text: Language[thisLan].button.name10, 'callback_data': 'edit_lng' }],
+                    [{ text: Language[thisLan].button.name11, 'callback_data': 'recipe' }]
                     // [BUTTONS.find],
                     // [BUTTONS.bucket],
                 ]
@@ -323,7 +325,8 @@ bot.on('callback_query', (result) => {
                         [{ text: Language[thisLan].button.name4, 'callback_data': 'bucket' },
                             { text: Language[thisLan].button.name9, 'callback_data': 'about' }
                         ],
-                        [{ text: Language[thisLan].button.name10, 'callback_data': 'edit_lng' }]
+                        [{ text: Language[thisLan].button.name10, 'callback_data': 'edit_lng' }],
+                        [{ text: Language[thisLan].button.name11, 'callback_data': 'recipe' }]
                         // [BUTTONS.find],
                         // [BUTTONS.bucket],
                     ]
@@ -375,7 +378,8 @@ bot.on('callback_query', (result) => {
                         [{ text: Language[thisLan].button.name4, 'callback_data': 'bucket' },
                             { text: Language[thisLan].button.name9, 'callback_data': 'about' }
                         ],
-                        [{ text: Language[thisLan].button.name10, 'callback_data': 'edit_lng' }]
+                        [{ text: Language[thisLan].button.name10, 'callback_data': 'edit_lng' }],
+                        [{ text: Language[thisLan].button.name11, 'callback_data': 'recipe' }]
                         // [BUTTONS.find],
                         // [BUTTONS.bucket],
                     ]
@@ -486,7 +490,8 @@ bot.on('callback_query', (result) => {
                     [{ text: Language[thisLan].button.name4, 'callback_data': 'bucket' },
                         { text: Language[thisLan].button.name9, 'callback_data': 'about' }
                     ],
-                    [{ text: Language[thisLan].button.name10, 'callback_data': 'edit_lng' }]
+                    [{ text: Language[thisLan].button.name10, 'callback_data': 'edit_lng' }],
+                    [{ text: Language[thisLan].button.name11, 'callback_data': 'recipe' }]
                 ],
                 one_time_keyboard: true,
                 remove_keyboard: true,
@@ -495,13 +500,10 @@ bot.on('callback_query', (result) => {
 
     } else if (result.data.includes('recipe')) {
 
-        langUsers[userLanIndex].lan = result.data.split(' ')[1];
-
-        thisLan = langUsers[userLanIndex].lan;
 
         bot.deleteMessage(chatId, result.message.message_id);
 
-        bot.sendMessage(chatId, "Reseptni extiyot bop tashen )")
+        bot.sendMessage(chatId, Language[thisLan].text.name13)
     } else {
         // console.log("BBBBBBBBBBBBBBBBBBBBBBB");
 
@@ -526,7 +528,7 @@ function getPagination(current, maxpage, thisLan) {
 }
 
 bot.on('callback_query', function(message) {
-    if (!message.data.includes('rate') && !message.data.includes('bucket') && !message.data.includes('buy') && !message.data.includes('back') && !message.data.includes('delete') && !message.data.includes('order') && !message.data.includes('allow') && !message.data.includes('lan') && !message.data.includes('about') && !message.data.includes('edit_lng') && !message.data.includes('edited')) {
+    if (!message.data.includes('rate') && !message.data.includes('bucket') && !message.data.includes('buy') && !message.data.includes('back') && !message.data.includes('delete') && !message.data.includes('order') && !message.data.includes('allow') && !message.data.includes('lan') && !message.data.includes('about') && !message.data.includes('edit_lng') && !message.data.includes('edited') && !message.data.includes('recipe')) {
 
         let thisRate = (checkedPharms.find(checkP => checkP.userId == message.message.chat.id)).rate
 
@@ -582,7 +584,8 @@ bot.on('message', (msg) => {
                         [{ text: Language[thisLan].button.name4, 'callback_data': 'bucket' },
                             { text: Language[thisLan].button.name9, 'callback_data': 'about' }
                         ],
-                        [{ text: Language[thisLan].button.name10, 'callback_data': 'edit_lng' }]
+                        [{ text: Language[thisLan].button.name10, 'callback_data': 'edit_lng' }],
+                        [{ text: Language[thisLan].button.name11, 'callback_data': 'recipe' }]
                         // [BUTTONS.find],
                         // [BUTTONS.bucket]
                     ]
@@ -594,7 +597,48 @@ bot.on('message', (msg) => {
             //     hide_keyboard: true
             // })
         })
+    } else if (msg.photo != null) {
+        let fileId = msg.photo[0].file_id;
+        let findPhotoUrl = `https://api.telegram.org/bot${api_token}/getFile?file_id=` + fileId;
+
+        request.get(findPhotoUrl, (err, res, body) => {
+            if (err) { console.log(err); return; }
+
+            let data = JSON.parse(body)
+            if (data.ok) {
+
+                let path = data.result.file_path;
+                let photoURL = `https://api.telegram.org/file/bot${api_token}/` + path;
+
+                var formData = {
+                    number: msg.chat.id,
+                    image: request(photoURL)
+                };
+                request.post({
+                    url: WEB_SITE + '/retsept/create',
+                    formData: formData
+                }, async(err, res, body) => {
+                    if (err) { console.log(err); return; }
+
+                    bot.sendMessage(msg.chat.id, 'BALEEE')
+                    console.log(body);
+                    // console.log(JSON.parse(body))
+                    // console.log(pharms);
+
+                });
+
+            } else {
+                console.log("Some error");
+                return;
+            }
+
+
+        })
+
+
+
     }
+
     let userIndex = users.findIndex(x => x.userId == chatId);
     if (userIndex >= 0) {
         if (users[userIndex].orderStep == 1) {

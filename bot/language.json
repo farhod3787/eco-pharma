@@ -25,7 +25,8 @@
             "name9": "Tranzaksiya amalga oshirilishiga rozilik bildiring",
             "name10": "❌ Bunday dori bizda mavjud emas",
             "name11": "⛔️Bu dori bizda qolmadi",
-            "name12": "Tugadi"
+            "name12": "Tugadi",
+            "name13": "\tVrach tavsiya qilgan retseptni rasmini bizga jo'nating( .jpg farmatda ). \nBoshqa tipdagi fayllar inobatga olinmaydi"
         }
     },
     "ru": {
@@ -54,7 +55,8 @@
             "name9": "Пожалуйста, согласитесь с соглашением",
             "name10": "❌ У нас нет такого препарата",
             "name11": "⛔️У нас не было этого препарата",
-            "name12": "Закончено"
+            "name12": "Закончено",
+            "name13": "\tОтправьте нам фотографию рецепта вашего врача (файл .jpg). \nДругие типы файлов игнорируются"
         }
     }
 }
