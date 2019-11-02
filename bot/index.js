@@ -620,10 +620,8 @@ bot.on('message', (msg) => {
                 }, async(err, res, body) => {
                     if (err) { console.log(err); return; }
 
-                    bot.sendMessage(msg.chat.id, 'BALEEE')
-                    console.log(body);
-                    // console.log(JSON.parse(body))
-                    // console.log(pharms);
+                    bot.sendMessage(msg.chat.id, Language[thisLan].text.name14)
+                        // console.log(body); 
 
                 });
 
