@@ -6,10 +6,18 @@
         <div class="wrap-new-action-now" *ngIf = "pharm.sale != 0">
           <span >{{pharm.sale}}%</span>
         </div>
+<<<<<<< HEAD
         <!-- <div class="finished-icon" *ngIf="pharm.rate === 0">
             <div class="wrap-new-action"><span>AND</span></div>
           <div class="finished-icon-text"> Sotuvda qolmadi !</div>
         </div> -->
+=======
+        <div class="finished-icon" *ngIf="pharm.rate === 0">
+            <!-- <div class="wrap-new-action"><span>AND</span></div>  -->
+          <div class="finished-icon-text"> Sotuvda qolmadi !</div>
+
+        </div>
+>>>>>>> 52dca322ec97b243d8f40d248cfded1e90d86e03
 
         <div routerLink="/about-pharm/{{pharm._id}}" class="drug-product-about">
 
@@ -27,8 +35,12 @@
           <div class="row no-gutters">
             <div class="col-9">
               <div class="drug-product-buy">
+<<<<<<< HEAD
 
                 <button (click)="addBasket(pharm._id, pharm.name)" ><span class="fa fa-shopping-cart"></span> Savatga
+=======
+                <button ><span class="fa fa-shopping-cart"></span> Savatga
+>>>>>>> 52dca322ec97b243d8f40d248cfded1e90d86e03
                   qo'shish</button>
               </div>
             </div>

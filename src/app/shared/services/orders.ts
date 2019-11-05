@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import {environment} from './../../../environments/environment';
 @Injectable({
     providedIn: 'root'
   })
@@ -8,7 +9,7 @@ import { Http } from '@angular/http';
     constructor(private http: Http) {
 
     }
-  url = "http://localhost:5000"
+  url = environment.url;
     // url = "";
   // url = "https://eco-pharmacy.herokuapp.com"
 
