@@ -59,6 +59,6 @@ require('./backend/utils/socket')(io);
 server.on("error", onError);
 server.on("listening", onListening);
 
-require("./bot/index")
+// require("./bot/index")
 
 server.listen(port, () => { console.log("Running...") });
